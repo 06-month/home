@@ -37,9 +37,9 @@ export function Hero() {
           >
             Blog
           </a>
-          {site.links.cv !== '#' && (
+          {site.links.cv && (
             <a
-              href={site.links.cv}
+              href={`${import.meta.env.BASE_URL}${site.links.cv}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-lg border border-zinc-300 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"

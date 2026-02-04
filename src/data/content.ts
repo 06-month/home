@@ -10,7 +10,7 @@ export const site = {
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
-    cv: '/Jun%20Jeon%20CV.pdf',
+    cv: 'Jun%20Jeon%20CV.pdf', // BASE_URL과 합쳐서 사용 (GitHub Pages 대응)
   },
   email: '20237142@edu.hanbat.ac.kr',
   phone: '+82 10-4107-4189',

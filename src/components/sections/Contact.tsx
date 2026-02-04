@@ -5,7 +5,7 @@ const links: { label: string; href: string; icon: 'mail' | 'phone' | 'github' | 
   { label: site.phone, href: `tel:${site.phone.replace(/\s/g, '')}`, icon: 'phone' },
   { label: 'GitHub', href: site.links.github, icon: 'github' },
   { label: 'Blog', href: site.links.blog, icon: 'blog' },
-  { label: 'CV (PDF)', href: site.links.cv, icon: 'cv' },
+  { label: 'CV (PDF)', href: `${import.meta.env.BASE_URL}${site.links.cv}`, icon: 'cv' },
 ];
 
 function Icon({ name }: { name: string }) {
