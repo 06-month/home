@@ -6,11 +6,11 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <article className="group rounded-xl border border-zinc-200 bg-white p-5 transition dark:border-zinc-800 dark:bg-zinc-900/50 dark:hover:border-cyan-500/30">
+    <article className="group rounded-2xl border border-neutral-200/80 bg-white p-6 shadow-sm transition hover:shadow-md dark:border-neutral-800/80 dark:bg-neutral-900/40 dark:hover:border-neutral-700">
       <div className="flex items-start justify-between gap-2">
-        <h3 className="font-semibold text-zinc-900 dark:text-zinc-100">{project.title}</h3>
+        <h3 className="font-semibold text-neutral-900 dark:text-neutral-50">{project.title}</h3>
         {project.ongoing && (
-          <span className="shrink-0 rounded bg-cyan-100 px-2 py-0.5 font-mono text-xs text-cyan-700 dark:bg-cyan-900/50 dark:text-cyan-300">
+          <span className="shrink-0 rounded-full bg-blue-100 px-2.5 py-0.5 font-mono text-xs text-blue-700 dark:bg-blue-950/60 dark:text-blue-300">
             Ongoing
           </span>
         )}
@@ -19,13 +19,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         {project.keywords.map((kw) => (
           <span
             key={kw}
-            className="rounded bg-zinc-100 px-2 py-0.5 font-mono text-xs text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400"
+            className="rounded-full bg-neutral-100 px-2 py-0.5 font-mono text-xs text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
           >
             {kw}
           </span>
         ))}
       </div>
-      <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
+      <p className="mt-3 text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
         {project.description}
       </p>
       <div className="mt-4 flex flex-wrap gap-2">
@@ -34,7 +34,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-400"
+            className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
           >
             {project.label ?? 'GitHub'}
             <span aria-hidden>→</span>
@@ -45,7 +45,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.blogHref}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-sm font-medium text-cyan-600 hover:underline dark:text-cyan-400"
+            className="inline-flex items-center gap-1 text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
           >
             Blog
             <span aria-hidden>→</span>

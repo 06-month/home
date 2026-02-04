@@ -44,9 +44,9 @@ function Icon({ name }: { name: string }) {
 
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-zinc-200 px-4 py-16 dark:border-zinc-800 sm:px-6">
+    <section id="contact" className="border-t border-neutral-200 px-4 py-16 dark:border-neutral-800 sm:px-6">
       <div className="mx-auto max-w-3xl">
-        <h2 className="font-semibold text-zinc-900 dark:text-zinc-100">Contact</h2>
+        <h2 className="font-semibold text-neutral-900 dark:text-neutral-50">Contact</h2>
         <ul className="mt-6 flex flex-wrap gap-6">
           {links.map(({ label, href, icon }) => (
             <li key={label}>
@@ -54,7 +54,7 @@ export function Contact() {
                 href={href}
                 target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
                 rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                className="flex items-center gap-2 text-zinc-600 transition hover:text-cyan-600 dark:text-zinc-400 dark:hover:text-cyan-400"
+                className="flex items-center gap-2 text-neutral-600 transition hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400"
               >
                 <Icon name={icon} />
                 {label}
@@ -62,7 +62,7 @@ export function Contact() {
             </li>
           ))}
         </ul>
-        <p className="mt-8 text-sm text-zinc-500 dark:text-zinc-500">
+        <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-500">
           © {new Date().getFullYear()} {site.name}. All rights reserved.
         </p>
       </div>

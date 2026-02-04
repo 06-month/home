@@ -1,10 +1,10 @@
 import type { ExperienceItem, Project, SkillGroup } from '@/types';
 
 export const site = {
-  name: 'Jeon Jun',
+  name: 'Jun Jeon',
   nameKo: '전준',
-  tagline: 'Theory-driven research in visual understanding',
-  subline: 'I work on deep learning for perception—segmentation, pose estimation, recognition—starting from theoretical analysis and validating through experiments.',
+  tagline: 'AI Research Student',
+  subline: 'Visual understanding — segmentation, pose estimation, recognition.',
   affiliation: 'Hanbat National University · AiR Lab',
   keywords: ['Computer Vision', 'Semantic Segmentation', 'Hand Pose Estimation', 'Federated Learning'],
   links: {
@@ -17,9 +17,12 @@ export const site = {
 } as const;
 
 export const aboutParagraphs = [
-  'I study deep learning–based visual understanding—hand pose estimation, segmentation, recognition—with a theory-first approach: I start from formal or structural analysis and then test hypotheses through controlled experiments.',
-  'Right now I am investigating how to segment building footprints from satellite imagery and what representations and losses best transfer across resolution and sensor conditions. Past work has touched cross-modal fusion for remote sensing (RGB/NIR), federated learning with vision–language priors (CLIP2FL, manuscript under submission), and the transition from offline to online reinforcement learning.',
+  'I work on deep learning for visual understanding, with a focus on segmentation, pose estimation, and recognition.',
+  'Right now I am investigating building footprint segmentation from satellite imagery and how representations and losses transfer across resolution and sensor conditions. Past work includes cross-modal fusion for remote sensing (RGB/NIR), federated learning with vision–language priors (CLIP2FL, under submission), and offline-to-online reinforcement learning.',
 ];
+
+export const researchPhilosophy =
+  'I approach problems by first clarifying model assumptions and representation choices, then testing whether they hold under controlled experiments. The goal is to understand when and why a method works, not only that it works.';
 
 export const priorWorkFraming =
   'The projects below sit on a single axis: from dense prediction and recognition in images to learning under distribution shift and limited supervision.';
