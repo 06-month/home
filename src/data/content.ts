@@ -29,6 +29,13 @@ export const priorWorkFraming =
 
 export const projects: Project[] = [
   {
+    id: 'hand-pose',
+    title: 'Hands2023-based 3D Hand Pose Estimation',
+    keywords: ['Hand Pose Estimation', '3D Vision', 'Deep Learning'],
+    description: '3D hand pose estimation from RGB images using keypoint regression-based deep learning models. Independent Experimental Study, 2026 (Feb. 2026 ~ Present).',
+    ongoing: true,
+  },
+  {
     id: 'satellite-building',
     title: 'Satellite Image Building Area Segmentation',
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
@@ -66,13 +73,6 @@ export const projects: Project[] = [
     description: 'Multi-class image classification on the Tiny-ImageNet dataset. Lab Coding Seminar, 2025 (Jul. ~ Aug. 2025).',
     href: 'https://github.com/06-month/Tiny-ImageNet-Image-Classification',
     label: 'GitHub',
-  },
-  {
-    id: 'hand-pose',
-    title: 'Hands2023-based 3D Hand Pose Estimation',
-    keywords: ['Hand Pose Estimation', '3D Vision', 'Deep Learning'],
-    description: '3D hand pose estimation from RGB images using keypoint regression-based deep learning models. Independent Experimental Study, 2026 (Feb. 2026 ~ Present).',
-    ongoing: true,
   },
 ];
 
