@@ -3,6 +3,7 @@ import { useTheme } from '@/hooks/useTheme';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
 import { About } from '@/components/sections/About';
+import { Publications } from '@/components/sections/Publications';
 import { Research } from '@/components/sections/Research';
 import { Skills } from '@/components/sections/Skills';
 import { Experience } from '@/components/sections/Experience';
@@ -22,6 +23,7 @@ export default function App() {
       <main>
         <Hero />
         <About />
+        <Publications />
         <Research />
         <Skills />
         <Experience />
@@ -30,3 +32,4 @@ export default function App() {
     </>
   );
 }
+

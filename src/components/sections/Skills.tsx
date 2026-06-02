@@ -2,21 +2,25 @@ import { skillGroups } from '@/data/content';
 
 export function Skills() {
   return (
-    <section id="skills" className="border-t border-neutral-200 px-4 py-16 dark:border-neutral-800 sm:px-6">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="font-semibold text-neutral-900 dark:text-neutral-50">Skills</h2>
-        <p className="mt-2 text-sm text-neutral-500 dark:text-neutral-500">
-          연구·실험·시스템 구축에 실제로 사용한 기술 위주입니다.
-        </p>
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">
+    <section id="skills" className="border-t border-hairline bg-canvas-soft dark:bg-[#071829]/30 px-4 py-20 dark:border-neutral-850 sm:px-6 transition-colors duration-300">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-left mb-10">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-soft font-sans">Core Capabilities</h2>
+          <h3 className="mt-2 text-3xl font-light tracking-[-0.03em] text-ink dark:text-white">Technical Skills</h3>
+          <p className="mt-4 text-[14px] text-ink-mute dark:text-neutral-400 font-light">
+            Practical skills utilized in research, experiments, and system implementations.
+          </p>
+        </div>
+        
+        <div className="grid gap-10 sm:grid-cols-3">
           {skillGroups.map((group) => (
-            <div key={group.title}>
-              <h3 className="font-medium text-neutral-800 dark:text-neutral-200">{group.title}</h3>
-              <ul className="mt-2 flex flex-wrap gap-2">
+            <div key={group.title} className="bg-canvas dark:bg-white/5 border border-hairline dark:border-white/5 p-6 rounded-2xl shadow-sm text-left">
+              <h3 className="text-[16px] font-semibold text-ink dark:text-neutral-200 font-sans tracking-tight mb-4">{group.title}</h3>
+              <ul className="flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li
                     key={item}
-                    className="rounded-full bg-neutral-100 px-2.5 py-1 font-mono text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400"
+                    className="rounded-full bg-primary-subdued/30 dark:bg-primary-subdued/10 px-3 py-1 font-mono text-xs font-medium text-primary-deep dark:text-primary-soft transition-transform hover:scale-105 duration-100"
                   >
                     {item}
                   </li>
@@ -29,3 +33,4 @@ export function Skills() {
     </section>
   );
 }
+

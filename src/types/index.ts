@@ -20,3 +20,20 @@ export interface ExperienceItem {
   org: string;
   description: string;
 }
+
+export interface EducationItem {
+  institution: string;
+  period: string;
+  degree: string;
+  gpa: string;
+  majorGpa?: string;
+  details?: string;
+}
+
+export interface PublicationItem {
+  title: string;
+  authors: string;
+  venue: string;
+  href?: string;
+}
+

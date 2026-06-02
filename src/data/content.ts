@@ -1,131 +1,169 @@
-import type { ExperienceItem, Project, SkillGroup } from '@/types';
+import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationItem } from '@/types';
 
 export const site = {
   name: 'Jun Jeon',
   nameKo: '전준',
-  tagline: 'AI Research Student',
-  subline: 'Visual understanding — segmentation, pose estimation, recognition.',
-  affiliation: 'Hanbat National University · AiR Lab',
-  keywords: ['Computer Vision', 'Semantic Segmentation', 'Hand Pose Estimation', 'Federated Learning'],
+  tagline: 'AI & 3D Scene Reconstruction Researcher',
+  subline: 'Visual scene understanding, focusing on 3D Gaussian Splatting, Novel View Synthesis, and Robust 3D Reconstruction.',
+  affiliation: 'UNIST Vision & Learning Lab (UVLL)',
+  address: '', // Removed address per CV update
+  keywords: [
+    '3D Scene Reconstruction',
+    '3D Gaussian Splatting',
+    'Novel View Synthesis',
+    'Multi-View Geometry',
+    'Robust 3D Restoration',
+    'Semantic Segmentation',
+    'Federated Learning'
+  ],
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
-    cv: 'Jun%20Jeon%20CV.pdf?v=4', // 쿼리로 캐시 우회 (PDF 수정 시 v 숫자 올리기)
+    cv: 'Jun%20Jeon%20CV.pdf?v=8', // Increment cache buster
   },
   email: 'junjeon@edu.hanbat.ac.kr',
   phone: '+82 10-4107-4189',
 } as const;
 
 export const aboutParagraphs = [
-  'I work on deep learning for visual understanding, with a focus on segmentation, pose estimation, and recognition.',
-  'Right now I am investigating building footprint segmentation from satellite imagery and how representations and losses transfer across resolution and sensor conditions. Past work includes cross-modal fusion for remote sensing (RGB/NIR), federated learning with vision–language priors (CLIP2FL, under submission), and offline-to-online reinforcement learning.',
+  'I am an AI researcher specializing in deep learning for 3D computer vision. My core research interests revolve around 3D scene reconstruction—specifically 3D Gaussian Splatting, novel view synthesis, multi-view geometry, and structural reconstruction.',
+  'Currently, I am working as an Undergraduate Researcher at the UNIST Vision & Learning Lab (UVLL) under the advisement of Prof. Seungryul Baek, where I study robust 3D reconstruction and geometry-preserving synthetic-to-real dataset refinement. Prior to this, I was a researcher at Hanbat National University\'s Artificial Intelligence and Robotics Laboratory (AiRLab) advised by Prof. Dong-Geol Choi, where I worked on remote sensing semantic segmentation.',
 ];
 
 export const researchPhilosophy =
-  'I approach problems by first clarifying model assumptions and representation choices, then testing whether they hold under controlled experiments. The goal is to understand when and why a method works, not only that it works.';
+  'I approach research by identifying core model assumptions and representation choices, then rigorously testing them through controlled, reproducible experiments. My goal is to discover structural insights in 3D scene representation and reconstruction rather than simply chasing numbers.';
 
 export const priorWorkFraming =
-  'The projects below sit on a single axis: from dense prediction and recognition in images to learning under distribution shift and limited supervision.';
+  'My research traverses the spectrum from dense 2D image segmentation to 3D geometry reasoning, Neural Radiance Fields, and learning under domain distribution shifts.';
+
+export const education: EducationItem[] = [
+  {
+    institution: 'Hanbat National University',
+    period: 'Mar. 2025 – Present',
+    degree: 'B.S. in Computer Engineering',
+    gpa: '3.79 / 4.5',
+    majorGpa: '3.79 / 4.5',
+  },
+  {
+    institution: 'Pai Chai University',
+    period: 'Mar. 2021 – Dec. 2022',
+    degree: 'B.S. in Software Engineering',
+    gpa: '4.14 / 4.5',
+    majorGpa: '4.32 / 4.5',
+  },
+];
+
+export const publications: PublicationItem[] = [
+  {
+    title: 'Balanced Knowledge Distillation (BKD) for Long-Tail Federated Learning Based on CLIP2FL',
+    authors: 'Jun Jeon, Minu Baek, Sangkeum Lee †',
+    venue: 'KICS Winter Conference, 2026',
+  },
+];
 
 export const projects: Project[] = [
   {
-    id: 'hand-pose',
-    title: 'Egocentric 3D Hand Pose Estimation on AssemblyHands (HANDS@ICCV2023 Task 1)',
-    keywords: ['Hand Pose Estimation', '3D Vision', 'AssemblyHands'],
-    description: 'Implementing and analyzing RGB-based 3D keypoint regression models on the AssemblyHands dataset. Independent Experimental Study, 2026 (Feb. 2026 ~ Present).',
+    id: 'low-light-3d',
+    title: '3D Low-Light Enhancement for Robust Novel View Synthesis',
+    keywords: ['3D Reconstruction', '3D Vision', 'NTIRE 2026 Challenge', 'Gaussian Splatting'],
+    description: 'Analyzing challenge tasks, datasets, and baseline methods for robust 3D reconstruction under real-world visual degradations.',
+    ongoing: true,
+  },
+  {
+    id: 'geometry-dataset-refinement',
+    title: 'Geometry-Preserving Synthetic-to-Real Dataset Refinement',
+    keywords: ['3D Reconstruction', 'Synthetic-to-Real', 'Dataset Refinement'],
+    description: 'Studying geometry-preserving synthetic-to-real refinement to reduce the sim-to-real gap in 3D reconstruction.',
+    ongoing: true,
+  },
+  {
+    id: 'on-device-pose',
+    title: 'On-Device Human Pose Estimation for Real-Time Exercise Posture Assessment',
+    keywords: ['Mobile AI', 'Human Pose Estimation', 'On-Device ML'],
+    description: 'Leading the AI pipeline of a mobile exercise coaching system based on on-device human pose estimation and developing posture assessment using joint-angle features.',
     ongoing: true,
   },
   {
     id: 'satellite-building',
     title: 'Satellite Image Building Area Segmentation',
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
-    description: 'Semantic segmentation of building regions from satellite imagery using deep learning models. Lab Coding Seminar, 2026 (Jan. 2026 ~ Present).',
-    ongoing: true,
-  },
-  {
-    id: 'satellite-cloud',
-    title: 'Satellite Cloud Semantic Segmentation',
-    keywords: ['Semantic Segmentation', 'Computer Vision', 'CMX'],
-    description: 'Semantic segmentation of satellite images for three cloud types (thick, thin, shadow). Computer Vision Term Project, 2025 (Nov. ~ Dec. 2025).',
-    href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
-    label: 'GitHub',
+    description: 'Semantic segmentation of building regions from satellite imagery using deep learning models.',
+    ongoing: false,
   },
   {
     id: 'clip2fl',
     title: 'CLIP2FL-based Federated Learning Research',
     keywords: ['Federated Learning', 'CLIP', 'BKD'],
-    description: 'Federated learning research on CLIP2FL with balanced knowledge distillation. IoT Project, 2025 (Oct. ~ Dec. 2025). Manuscript under submission to a domestic communications conference.',
+    description: 'Federated learning research on CLIP2FL with balanced knowledge distillation, resulting in a conference publication at KICS Winter Conference 2026.',
     href: 'https://github.com/06-month/CLIP2FL_BKD',
     label: 'GitHub',
   },
   {
-    id: 'rl-bc-ppo',
-    title: 'Offline-to-Online Reinforcement Learning with BC and PPO',
-    keywords: ['Reinforcement Learning', 'RLlib', 'MuJoCo'],
-    description: 'Offline behavior cloning followed by PPO fine-tuning using RLlib on the MuJoCo HalfCheetah environment. Reinforcement Learning Final Project (Nov. ~ Dec. 2025).',
-    href: 'https://github.com/06-month/Offline-to-Online-Reinforcement-Learning',
-    label: 'GitHub',
-  },
-  {
-    id: 'tiny-imagenet',
-    title: 'Tiny-ImageNet Image Classification',
-    keywords: ['Image Classification', 'Deep Learning', 'Tiny-ImageNet'],
-    description: 'Multi-class image classification on the Tiny-ImageNet dataset. Lab Coding Seminar, 2025 (Jul. ~ Aug. 2025).',
-    href: 'https://github.com/06-month/Tiny-ImageNet-Image-Classification',
+    id: 'satellite-cloud',
+    title: 'Satellite Cloud Semantic Segmentation',
+    keywords: ['Semantic Segmentation', 'Computer Vision', 'CMX'],
+    description: 'Semantic segmentation of satellite images for three cloud types (thick, thin, and cloud shadow).',
+    href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
     label: 'GitHub',
   },
 ];
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: 'Programming',
-    items: ['Python', 'C/C++/C#', 'Java', 'SQL'],
+    title: 'Programming Languages',
+    items: ['Python', 'C/C++/C#', 'Java', 'MATLAB', 'SQL'],
   },
   {
-    title: 'Tools & Frameworks',
-    items: ['PyTorch', 'Vim', 'Docker', 'Git'],
+    title: 'ML / CV Frameworks',
+    items: ['PyTorch', 'NumPy', 'OpenCV'],
   },
   {
-    title: 'Research',
-    items: ['Semantic Segmentation', 'Hand Pose Estimation', 'Federated Learning', 'Reinforcement Learning'],
+    title: 'Tools & Environments',
+    items: ['Docker', 'Git', 'Linux', 'Vim'],
   },
 ];
 
 export const experiences: ExperienceItem[] = [
   {
-    period: 'Present',
+    period: 'Mar 2026 – Present',
     title: 'Undergraduate Researcher',
-    org: 'Artificial Intelligence and Robotics Laboratory (AiR), Hanbat National University',
-    description: 'Deep learning–based visual understanding; federated learning and segmentation research.',
+    org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
+    description: 'Advised by Prof. Seungryul Baek. Focus: 3D reconstruction and 3D hand pose/reconstruction.',
   },
   {
     period: 'Nov 2025',
     title: '1st Place — Open Source Software Utilization Competition',
     org: 'Hanbat National University',
-    description: 'OCR-based financial management web application: Budgetly.',
+    description: 'Developed Budgetly: an OCR-based financial management web application.',
   },
   {
     period: '—',
     title: 'AWS Certified Cloud Practitioner (CLF-C02)',
-    org: 'Certification',
+    org: 'Amazon Web Services (Certification)',
     description: '',
   },
   {
     period: '—',
     title: 'Naver Cloud Platform Certified Associate (NCA)',
-    org: 'Certification',
+    org: 'Naver Cloud (Certification)',
     description: '',
+  },
+  {
+    period: 'Jun 2025 – Mar 2026',
+    title: 'Undergraduate Researcher',
+    org: 'Artificial Intelligence and Robotics Laboratory (AiRLab), Hanbat National University',
+    description: 'Advised by Prof. Dong-Geol Choi. Conducted research on computer vision, remote sensing semantic segmentation, and long-tail federated learning.',
+  },
+  {
+    period: 'Coursework',
+    title: 'Related Coursework',
+    org: 'Hanbat National University',
+    description: 'Artificial Intelligence (A+), Computer Vision (A+), Reinforcement Learning (A+)',
   },
   {
     period: '—',
     title: 'TOEIC 800',
-    org: 'Certification',
-    description: '',
-  },
-  {
-    period: 'Related courses',
-    title: 'Artificial Intelligence (A+), Computer Vision (A+), Reinforcement Learning (A+)',
-    org: 'Hanbat National University',
+    org: 'ETS (Language Proficiency)',
     description: '',
   },
 ];

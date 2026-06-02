@@ -2,26 +2,42 @@ import { experiences } from '@/data/content';
 
 export function Experience() {
   return (
-    <section id="experience" className="border-t border-neutral-200 px-4 py-16 dark:border-neutral-800 sm:px-6">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="font-semibold text-neutral-900 dark:text-neutral-50">Experience / Awards</h2>
-        <ul className="mt-8 space-y-6">
+    <section id="experience" className="border-t border-hairline bg-canvas px-4 py-20 dark:bg-[#0b1528] dark:border-neutral-850 sm:px-6 transition-colors duration-300">
+      <div className="mx-auto max-w-5xl">
+        <div className="text-left mb-12">
+          <h2 className="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-soft font-sans">Career & Milestones</h2>
+          <h3 className="mt-2 text-3xl font-light tracking-[-0.03em] text-ink dark:text-white">Experience & Awards</h3>
+        </div>
+
+        <div className="relative border-l border-hairline dark:border-white/10 ml-4 pl-6 md:pl-8 space-y-10 text-left">
           {experiences.map((item, i) => (
-            <li key={i} className="flex gap-4">
-              <span className="shrink-0 font-mono text-sm text-neutral-500 dark:text-neutral-500">
-                {item.period}
-              </span>
-              <div>
-                <p className="font-medium text-neutral-900 dark:text-neutral-50">{item.title}</p>
-                <p className="text-sm text-neutral-500 dark:text-neutral-500">{item.org}</p>
-                {item.description && (
-                  <p className="mt-1 text-sm text-neutral-600 dark:text-neutral-400">{item.description}</p>
-                )}
+            <div key={i} className="relative group">
+              {/* Timeline Dot */}
+              <div className="absolute -left-[28px] md:-left-[36px] top-1.5 w-3 h-3 rounded-full border-2 border-canvas dark:border-[#0b1528] bg-primary dark:bg-primary-soft group-hover:scale-125 transition-transform duration-100" />
+              
+              <div className="flex flex-col md:flex-row md:items-baseline md:justify-between gap-2">
+                <div>
+                  <h4 className="text-lg font-medium text-ink dark:text-neutral-200">
+                    {item.title}
+                  </h4>
+                  <p className="text-[14px] text-primary dark:text-primary-soft font-medium tracking-tight mt-0.5">
+                    {item.org}
+                  </p>
+                </div>
+                <span className="shrink-0 font-mono text-[12px] font-semibold font-tabular text-ink-mute dark:text-neutral-450 uppercase tracking-wide md:text-right">
+                  {item.period}
+                </span>
               </div>
-            </li>
+              {item.description && (
+                <p className="mt-2 text-[14px] leading-relaxed text-ink-secondary dark:text-neutral-300 font-light max-w-3xl">
+                  {item.description}
+                </p>
+              )}
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
     </section>
   );
 }
+

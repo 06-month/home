@@ -5,7 +5,7 @@ const links: { label: string; href: string; icon: 'mail' | 'phone' | 'github' | 
   { label: site.phone, href: `tel:${site.phone.replace(/\s/g, '')}`, icon: 'phone' },
   { label: 'GitHub', href: site.links.github, icon: 'github' },
   { label: 'Blog', href: site.links.blog, icon: 'blog' },
-  { label: 'CV (PDF)', href: `${import.meta.env.BASE_URL}${site.links.cv}`, icon: 'cv' },
+  { label: 'CV', href: `${import.meta.env.BASE_URL}${site.links.cv}`, icon: 'cv' },
 ];
 
 function Icon({ name }: { name: string }) {
@@ -41,31 +41,48 @@ function Icon({ name }: { name: string }) {
     );
   return null;
 }
-
 export function Contact() {
   return (
-    <section id="contact" className="border-t border-neutral-200 px-4 py-16 dark:border-neutral-800 sm:px-6">
-      <div className="mx-auto max-w-3xl">
-        <h2 className="font-semibold text-neutral-900 dark:text-neutral-50">Contact</h2>
-        <ul className="mt-6 flex flex-wrap gap-6">
-          {links.map(({ label, href, icon }) => (
-            <li key={label}>
-              <a
-                href={href}
-                target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
-                rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                className="flex items-center gap-2 text-neutral-600 transition hover:text-blue-600 dark:text-neutral-400 dark:hover:text-blue-400"
-              >
-                <Icon name={icon} />
-                {label}
-              </a>
-            </li>
-          ))}
-        </ul>
-        <p className="mt-8 text-sm text-neutral-500 dark:text-neutral-500">
-          © {new Date().getFullYear()} {site.name}. All rights reserved.
-        </p>
+    <footer id="contact" className="border-t border-hairline bg-canvas-soft dark:bg-[#071829]/50 px-4 py-16 dark:border-neutral-850 sm:px-6 transition-colors duration-300">
+      <div className="mx-auto max-w-5xl">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Brand Info & Copyright */}
+          <div className="md:col-span-4 flex flex-col items-start text-left space-y-3">
+            <span className="font-semibold text-[16px] text-ink dark:text-white tracking-tight font-sans">
+              {site.name} ({site.nameKo})
+            </span>
+            <p className="text-[13px] text-ink-mute dark:text-neutral-450 font-light max-w-sm leading-relaxed">
+              AI Research Student. Focused on 3D scene reconstruction, 3D hand pose estimation, and semantic segmentation.
+            </p>
+            <p className="text-[12px] text-ink-mute dark:text-neutral-500 font-tabular font-light pt-2">
+              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            </p>
+          </div>
+
+          {/* Right Column: Contact Links */}
+          <div className="md:col-span-8 flex flex-col md:items-end space-y-4">
+            <span className="text-[11px] uppercase tracking-wider text-ink-mute dark:text-neutral-450 font-bold font-sans">
+              Get in Touch
+            </span>
+            <ul className="flex flex-wrap gap-2 md:justify-end">
+              {links.map(({ label, href, icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
+                    rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+                    className="inline-flex items-center gap-2 rounded-full border border-hairline bg-canvas px-4 py-2 text-xs font-medium text-ink-secondary dark:bg-[#0b1528] dark:border-white/10 dark:text-neutral-350 hover:bg-canvas-soft dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary-soft hover:border-primary/50 dark:hover:border-primary-soft/50 shadow-sm transition duration-150"
+                  >
+                    <Icon name={icon} />
+                    <span className={icon === 'phone' ? 'font-tabular' : ''}>{label}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
       </div>
-    </section>
+    </footer>
   );
 }
+
