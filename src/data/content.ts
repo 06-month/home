@@ -12,29 +12,28 @@ export const site = {
     '3D Gaussian Splatting',
     'Novel View Synthesis',
     'Multi-View Geometry',
-    'Robust 3D Restoration',
-    'Semantic Segmentation',
-    'Federated Learning'
+    'Neural Scene Representation',
+    'Robust 3D Reconstruction'
   ],
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
-    cv: 'Jun%20Jeon%20CV.pdf?v=8', // Increment cache buster
+    cv: 'Jun%20Jeon%20CV.pdf?v=9', // Increment cache buster
   },
   email: 'junjeon@edu.hanbat.ac.kr',
   phone: '+82 10-4107-4189',
 } as const;
 
 export const aboutParagraphs = [
-  'I am an AI researcher specializing in deep learning for 3D computer vision. My core research interests revolve around 3D scene reconstruction—specifically 3D Gaussian Splatting, novel view synthesis, multi-view geometry, and structural reconstruction.',
-  'Currently, I am working as an Undergraduate Researcher at the UNIST Vision & Learning Lab (UVLL) under the advisement of Prof. Seungryul Baek, where I study robust 3D reconstruction and geometry-preserving synthetic-to-real dataset refinement. Prior to this, I was a researcher at Hanbat National University\'s Artificial Intelligence and Robotics Laboratory (AiRLab) advised by Prof. Dong-Geol Choi, where I worked on remote sensing semantic segmentation.',
+  'I am an AI researcher specializing in deep learning for 3D computer vision. Having built a solid foundation in 2D visual understanding and representation learning, I am now expanding my research toward 3D scene reconstruction and neural rendering.',
+  'Currently, I am working as an Undergraduate Researcher at the UNIST Vision & Learning Lab (UVLL) under the advisement of Prof. Seungryul Baek, where I study robust 3D reconstruction and geometry-preserving synthetic-to-real dataset refinement. Prior to this, I was a researcher at Hanbat National University\'s Artificial Intelligence and Robotics Laboratory (AiRLab) advised by Prof. Dong-Geol Choi, where I focused on visual representation and robustness.',
 ];
 
 export const researchPhilosophy =
-  'I approach research by identifying core model assumptions and representation choices, then rigorously testing them through controlled, reproducible experiments. My goal is to discover structural insights in 3D scene representation and reconstruction rather than simply chasing numbers.';
+  'I approach research by identifying core model assumptions and representation choices, then rigorously testing them through controlled, reproducible experiments. My goal is to discover structural insights in 3D scene representation and reconstruction rather than simply chasing numbers. Specifically, I aim to combine geometric constraints, learned representations, and rendering-based supervision to establish robust 3D perception under challenging real-world environments.';
 
 export const priorWorkFraming =
-  'My research traverses the spectrum from dense 2D image segmentation to 3D geometry reasoning, Neural Radiance Fields, and learning under domain distribution shifts.';
+  'My selected works show a progression from 2D visual understanding and representation learning toward 3D scene reconstruction, neural rendering, and robust geometry-aware perception.';
 
 export const education: EducationItem[] = [
   {
@@ -87,23 +86,23 @@ export const projects: Project[] = [
     id: 'satellite-building',
     title: 'Satellite Image Building Area Segmentation',
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
-    description: 'Semantic segmentation of building regions from satellite imagery using deep learning models.',
+    description: 'Semantic segmentation of building regions from satellite imagery using deep learning, focusing on pixel-level visual understanding and spatial representation learning.',
     ongoing: false,
-  },
-  {
-    id: 'clip2fl',
-    title: 'CLIP2FL-based Federated Learning Research',
-    keywords: ['Federated Learning', 'CLIP', 'BKD'],
-    description: 'Federated learning research on CLIP2FL with balanced knowledge distillation, resulting in a conference publication at KICS Winter Conference 2026.',
-    href: 'https://github.com/06-month/CLIP2FL_BKD',
-    label: 'GitHub',
   },
   {
     id: 'satellite-cloud',
     title: 'Satellite Cloud Semantic Segmentation',
     keywords: ['Semantic Segmentation', 'Computer Vision', 'CMX'],
-    description: 'Semantic segmentation of satellite images for three cloud types (thick, thin, and cloud shadow).',
+    description: 'Semantic segmentation of satellite images for three cloud types, focusing on dense prediction under ambiguous boundaries and appearance variations.',
     href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
+    label: 'GitHub',
+  },
+  {
+    id: 'clip2fl',
+    title: 'CLIP2FL-based Federated Learning Research',
+    keywords: ['Federated Learning', 'CLIP', 'BKD'],
+    description: 'Federated learning research on CLIP2FL with balanced knowledge distillation, studying representation robustness under severe data distribution shifts, resulting in a conference publication at KICS Winter Conference 2026.',
+    href: 'https://github.com/06-month/CLIP2FL_BKD',
     label: 'GitHub',
   },
 ];
@@ -128,7 +127,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Mar 2026 – Present',
     title: 'Undergraduate Researcher',
     org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
-    description: 'Advised by Prof. Seungryul Baek. Focus: 3D reconstruction and 3D hand pose/reconstruction.',
+    description: 'Advised by Prof. Seungryul Baek. Focus: 3D scene reconstruction, neural rendering, and geometry-aware visual perception.',
   },
   {
     period: 'Nov 2025',

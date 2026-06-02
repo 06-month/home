@@ -36,7 +36,38 @@ export function Publications() {
             </div>
           ))}
         </div>
+
+        {/* Research in Progress */}
+        <div className="mt-16 text-left">
+          <h4 className="text-xs font-semibold uppercase tracking-wider text-primary dark:text-primary-soft font-sans mb-6">Research in Progress</h4>
+          <div className="grid gap-6 sm:grid-cols-2">
+            <div className="bg-canvas-soft dark:bg-white/5 border border-hairline dark:border-white/5 rounded-2xl p-6 hover:shadow-sm transition duration-150">
+              <span className="inline-flex rounded-full bg-yellow-500/10 dark:bg-yellow-450/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-yellow-600 dark:text-yellow-400 uppercase tracking-wider font-tabular">
+                Active Project
+              </span>
+              <h5 className="mt-3 text-[16px] font-semibold text-ink dark:text-neutral-200 leading-snug">
+                Geometry-Preserving Synthetic-to-Real Dataset Refinement for 3D Reconstruction
+              </h5>
+              <p className="mt-2 text-xs text-ink-mute dark:text-neutral-450 leading-relaxed font-light">
+                Studying geometry-preserving translation methods to refine synthetic datasets, aiming to bridge the domain gap and improve generalizability in neural 3D reconstruction.
+              </p>
+            </div>
+            
+            <div className="bg-canvas-soft dark:bg-white/5 border border-hairline dark:border-white/5 rounded-2xl p-6 hover:shadow-sm transition duration-150">
+              <span className="inline-flex rounded-full bg-yellow-500/10 dark:bg-yellow-450/10 px-2.5 py-0.5 font-mono text-[10px] font-semibold text-yellow-600 dark:text-yellow-400 uppercase tracking-wider font-tabular">
+                Active Project
+              </span>
+              <h5 className="mt-3 text-[16px] font-semibold text-ink dark:text-neutral-200 leading-snug">
+                Low-Light Robust Novel View Synthesis / 3D Gaussian Splatting
+              </h5>
+              <p className="mt-2 text-xs text-ink-mute dark:text-neutral-450 leading-relaxed font-light">
+                Developing robust Gaussian Splatting rendering architectures capable of reconstructing high-fidelity 3D scenes from degraded, low-light multi-view imagery.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
+
