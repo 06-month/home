@@ -7,6 +7,7 @@ export interface Project {
   label?: string;
   blogHref?: string;
   ongoing?: boolean;
+  type?: string;
 }
 
 export interface SkillGroup {

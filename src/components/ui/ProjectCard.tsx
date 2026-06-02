@@ -41,33 +41,35 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </p>
       </div>
 
-      {/* Action Links */}
-      <div className="mt-6 flex flex-wrap gap-4 items-center border-t border-hairline/60 dark:border-white/5 pt-4">
-        {project.href && (
-          <a
-            href={project.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:text-primary-deep dark:text-primary-soft dark:hover:text-white transition duration-150"
-          >
-            {project.label ?? 'GitHub'}
-            <span className="text-[10px] transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden>→</span>
-          </a>
-        )}
-        {project.blogHref && (
-          <a
-            href={project.blogHref}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:text-primary-deep dark:text-primary-soft dark:hover:text-white transition duration-150"
-          >
-            Blog
-            <span className="text-[10px] transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden>→</span>
-          </a>
-        )}
-        {!project.href && !project.blogHref && (
-          <span className="text-[12px] font-mono text-ink-mute dark:text-neutral-500 font-tabular font-light">
-            Lab Research
+      {/* Action Links & Category */}
+      <div className="mt-6 flex items-center justify-between border-t border-hairline/60 dark:border-white/5 pt-4">
+        <div className="flex flex-wrap gap-4 items-center">
+          {project.href && (
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:text-primary-deep dark:text-primary-soft dark:hover:text-white transition duration-150"
+            >
+              {project.label ?? 'GitHub'}
+              <span className="text-[10px] transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden>→</span>
+            </a>
+          )}
+          {project.blogHref && (
+            <a
+              href={project.blogHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 text-[13px] font-medium text-primary hover:text-primary-deep dark:text-primary-soft dark:hover:text-white transition duration-150"
+            >
+              Blog
+              <span className="text-[10px] transition-transform duration-150 group-hover:translate-x-0.5" aria-hidden>→</span>
+            </a>
+          )}
+        </div>
+        {project.type && (
+          <span className="text-[11px] font-mono text-ink-mute dark:text-neutral-500 font-tabular font-light">
+            {project.type}
           </span>
         )}
       </div>

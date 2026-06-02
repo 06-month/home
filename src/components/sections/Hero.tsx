@@ -14,7 +14,7 @@ export function Hero() {
           {/* Subdued Indigo Tag Pill */}
           <div className="inline-flex mb-4">
             <span className="rounded-full bg-primary-subdued/30 dark:bg-primary-subdued/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary-deep dark:text-primary-soft uppercase font-tabular">
-              {site.nameKo} · AI Researcher
+              {site.nameKo} · AI Research Student
             </span>
           </div>
 

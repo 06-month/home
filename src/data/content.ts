@@ -3,8 +3,8 @@ import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationIte
 export const site = {
   name: 'Jun Jeon',
   nameKo: '전준',
-  tagline: 'AI & 3D Scene Reconstruction Researcher',
-  subline: 'Visual scene understanding, focusing on 3D Gaussian Splatting, Novel View Synthesis, and Robust 3D Reconstruction.',
+  tagline: '3D Scene Reconstruction & Neural Rendering',
+  subline: 'I study 3D Gaussian Splatting, Novel View Synthesis, and robust neural scene representations for real-world 3D reconstruction.',
   affiliation: 'UNIST Vision & Learning Lab (UVLL)',
   address: '', // Removed address per CV update
   keywords: [
@@ -18,22 +18,22 @@ export const site = {
   links: {
     github: 'https://github.com/06-month',
     blog: 'https://6month.tistory.com/',
-    cv: 'Jun%20Jeon%20CV.pdf?v=9', // Increment cache buster
+    cv: 'Jun%20Jeon%20CV.pdf?v=10', // Increment cache buster
   },
   email: 'junjeon@edu.hanbat.ac.kr',
   phone: '+82 10-4107-4189',
 } as const;
 
 export const aboutParagraphs = [
-  'I am an AI researcher specializing in deep learning for 3D computer vision. Having built a solid foundation in 2D visual understanding and representation learning, I am now expanding my research toward 3D scene reconstruction and neural rendering.',
-  'Currently, I am working as an Undergraduate Researcher at the UNIST Vision & Learning Lab (UVLL) under the advisement of Prof. Seungryul Baek, where I study robust 3D reconstruction and geometry-preserving synthetic-to-real dataset refinement. Prior to this, I was a researcher at Hanbat National University\'s Artificial Intelligence and Robotics Laboratory (AiRLab) advised by Prof. Dong-Geol Choi, where I focused on visual representation and robustness.',
+  'I am an undergraduate AI research student specializing in deep learning for 3D computer vision. My research interests center on 3D scene reconstruction, neural rendering, 3D Gaussian Splatting, and Novel View Synthesis.',
+  'Before moving toward 3D reconstruction, I built a foundation in 2D visual understanding, semantic segmentation, and representation learning. This background now informs my interest in robust geometry-aware visual perception under challenging real-world conditions.',
 ];
 
 export const researchPhilosophy =
-  'I approach research by identifying core model assumptions and representation choices, then rigorously testing them through controlled, reproducible experiments. My goal is to discover structural insights in 3D scene representation and reconstruction rather than simply chasing numbers. Specifically, I aim to combine geometric constraints, learned representations, and rendering-based supervision to establish robust 3D perception under challenging real-world environments.';
+  'I approach research by identifying core model assumptions and representation choices, then testing them through controlled and reproducible experiments. My goal is to understand the structural principles behind 3D scene representation and reconstruction, rather than simply optimizing benchmark scores.\n\nI am particularly interested in combining geometric constraints, learned representations, and rendering-based supervision to build robust 3D perception systems under challenging real-world conditions.';
 
 export const priorWorkFraming =
-  'My selected works show a progression from 2D visual understanding and representation learning toward 3D scene reconstruction, neural rendering, and robust geometry-aware perception.';
+  'My selected works reflect a progression from 2D visual understanding and representation learning toward 3D scene reconstruction, neural rendering, and robust geometry-aware perception.';
 
 export const education: EducationItem[] = [
   {
@@ -46,7 +46,7 @@ export const education: EducationItem[] = [
   {
     institution: 'Pai Chai University',
     period: 'Mar. 2021 – Dec. 2022',
-    degree: 'B.S. in Software Engineering',
+    degree: 'B.S. Coursework in Software Engineering',
     gpa: '4.14 / 4.5',
     majorGpa: '4.32 / 4.5',
   },
@@ -65,45 +65,51 @@ export const projects: Project[] = [
     id: 'low-light-3d',
     title: '3D Low-Light Enhancement for Robust Novel View Synthesis',
     keywords: ['3D Reconstruction', '3D Vision', 'NTIRE 2026 Challenge', 'Gaussian Splatting'],
-    description: 'Analyzing challenge tasks, datasets, and baseline methods for robust 3D reconstruction under real-world visual degradations.',
+    description: 'Studying low-light degradation, dataset characteristics, and baseline methods for robust Novel View Synthesis and 3D Gaussian Splatting under challenging real-world visual conditions.',
     ongoing: true,
+    type: 'Challenge Study / 3D Reconstruction',
   },
   {
     id: 'geometry-dataset-refinement',
     title: 'Geometry-Preserving Synthetic-to-Real Dataset Refinement',
     keywords: ['3D Reconstruction', 'Synthetic-to-Real', 'Dataset Refinement'],
-    description: 'Studying geometry-preserving synthetic-to-real refinement to reduce the sim-to-real gap in 3D reconstruction.',
+    description: 'Investigating geometry-preserving synthetic-to-real dataset refinement to reduce appearance-domain gaps while maintaining geometric supervision for 3D reconstruction.',
     ongoing: true,
+    type: 'UVLL Research',
   },
   {
     id: 'on-device-pose',
     title: 'On-Device Human Pose Estimation for Real-Time Exercise Posture Assessment',
     keywords: ['Mobile AI', 'Human Pose Estimation', 'On-Device ML'],
-    description: 'Leading the AI pipeline of a mobile exercise coaching system based on on-device human pose estimation and developing posture assessment using joint-angle features.',
+    description: 'Developing the AI pipeline for a mobile exercise coaching system using on-device human pose estimation, joint-angle analysis, repetition counting, and posture assessment.',
     ongoing: true,
+    type: 'Capstone Project',
   },
   {
     id: 'satellite-building',
     title: 'Satellite Image Building Area Segmentation',
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
-    description: 'Semantic segmentation of building regions from satellite imagery using deep learning, focusing on pixel-level visual understanding and spatial representation learning.',
+    description: 'Developed semantic segmentation models for building-region extraction from satellite imagery, building a foundation in pixel-level visual understanding and spatial representation learning.',
     ongoing: false,
+    type: 'Computer Vision Project',
   },
   {
     id: 'satellite-cloud',
     title: 'Satellite Cloud Semantic Segmentation',
     keywords: ['Semantic Segmentation', 'Computer Vision', 'CMX'],
-    description: 'Semantic segmentation of satellite images for three cloud types, focusing on dense prediction under ambiguous boundaries and appearance variations.',
+    description: 'Developed semantic segmentation models for classifying cloud regions in satellite imagery, focusing on dense prediction under ambiguous boundaries and appearance variations.',
     href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
     label: 'GitHub',
+    type: 'AiRLab Research',
   },
   {
     id: 'clip2fl',
     title: 'CLIP2FL-based Federated Learning Research',
     keywords: ['Federated Learning', 'CLIP', 'BKD'],
-    description: 'Federated learning research on CLIP2FL with balanced knowledge distillation, studying representation robustness under severe data distribution shifts, resulting in a conference publication at KICS Winter Conference 2026.',
+    description: 'Studied long-tail federated learning based on CLIP2FL and balanced knowledge distillation, focusing on representation robustness under severe data distribution shifts. This work resulted in a conference publication at KICS Winter Conference 2026.',
     href: 'https://github.com/06-month/CLIP2FL_BKD',
     label: 'GitHub',
+    type: 'Conference Research',
   },
 ];
 
@@ -117,6 +123,10 @@ export const skillGroups: SkillGroup[] = [
     items: ['PyTorch', 'NumPy', 'OpenCV'],
   },
   {
+    title: 'Research / 3D Vision',
+    items: ['3D Gaussian Splatting', 'Novel View Synthesis', 'Multi-View Geometry', 'Camera Geometry'],
+  },
+  {
     title: 'Tools & Environments',
     items: ['Docker', 'Git', 'Linux', 'Vim'],
   },
@@ -127,7 +137,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Mar 2026 – Present',
     title: 'Undergraduate Researcher',
     org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
-    description: 'Advised by Prof. Seungryul Baek. Focus: 3D scene reconstruction, neural rendering, and geometry-aware visual perception.',
+    description: 'Advised by Prof. Seungryul Baek. Focus: robust 3D scene reconstruction, neural rendering, and geometry-aware visual perception.',
   },
   {
     period: 'Nov 2025',
@@ -151,7 +161,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Jun 2025 – Mar 2026',
     title: 'Undergraduate Researcher',
     org: 'Artificial Intelligence and Robotics Laboratory (AiRLab), Hanbat National University',
-    description: 'Advised by Prof. Dong-Geol Choi. Conducted research on computer vision, remote sensing semantic segmentation, and long-tail federated learning.',
+    description: 'Advised by Prof. Dong-Geol Choi. Conducted research on computer vision, semantic segmentation, representation learning, and long-tail federated learning.',
   },
   {
     period: 'Coursework',
