@@ -52,7 +52,7 @@ export function Contact() {
               {site.name} ({site.nameKo})
             </span>
             <p className="text-[13px] text-ink-mute dark:text-neutral-450 font-light max-w-sm leading-relaxed">
-              AI Research Student focused on 3D scene reconstruction, neural rendering, and robust visual perception.
+              AI Research Student focused on 3D scene representation, neural rendering, and robust visual perception.
             </p>
             <p className="text-[12px] text-ink-mute dark:text-neutral-500 font-tabular font-light pt-2">
               © {new Date().getFullYear()} {site.name}. All rights reserved.

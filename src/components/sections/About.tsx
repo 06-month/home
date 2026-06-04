@@ -21,8 +21,8 @@ export function About() {
             {/* Research Philosophy Cream Band Card */}
             <div className="card-cream-band rounded-2xl bg-canvas-cream dark:bg-[#272115] text-[#0d253d] dark:text-[#fbead0] p-8 border border-[#e3d1ba]/60 dark:border-[#4d3a24] shadow-sm transition duration-150 text-left">
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#9b6829] dark:text-[#e4a853] font-sans">Research Philosophy</h4>
-              <p className="mt-3 text-[15px] leading-relaxed font-light italic">
-                "{researchPhilosophy}"
+              <p className="mt-3 text-[15px] leading-relaxed font-light italic whitespace-pre-line">
+                {researchPhilosophy}
               </p>
             </div>
           </div>

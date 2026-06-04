@@ -76,7 +76,7 @@ export const projects: Project[] = [
     keywords: ['3D Reconstruction', 'Synthetic-to-Real', 'Dataset Refinement'],
     description: 'Investigating geometry-preserving synthetic-to-real dataset refinement to reduce appearance-domain gaps while maintaining geometric supervision for 3D reconstruction.',
     ongoing: true,
-    type: 'UVLL Research',
+    type: 'Independent Study',
   },
   {
     id: 'on-device-pose',
@@ -138,7 +138,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Mar 2026 – Present',
     title: 'Undergraduate Researcher',
     org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
-    description: 'Advised by Prof. Seungryul Baek. Focus: 3D hand pose estimation and hand reconstruction, with broader research interests in 3D scene representation and neural rendering.',
+    description: 'Advised by Prof. Seungryul Baek. Research experience in 3D hand pose estimation and hand reconstruction, with broader research interests in 3D scene representation and neural rendering.',
   },
   {
     period: 'Nov 2025',
