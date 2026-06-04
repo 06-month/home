@@ -3,16 +3,16 @@ import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationIte
 export const site = {
   name: 'Jun Jeon',
   nameKo: '전준',
-  tagline: '3D Scene Reconstruction & Neural Rendering',
-  subline: 'I study 3D Gaussian Splatting, Novel View Synthesis, and robust neural scene representations for real-world 3D reconstruction.',
+  tagline: '3D Scene Representation & Neural Rendering',
+  subline: 'I study 3D Gaussian Splatting, Neural Rendering, and Novel View Synthesis for robust 3D scene representation and reconstruction.',
   affiliation: 'UNIST Vision & Learning Lab (UVLL)',
   address: '', // Removed address per CV update
   keywords: [
-    '3D Scene Reconstruction',
+    '3D Scene Representation',
     '3D Gaussian Splatting',
+    'Neural Rendering',
     'Novel View Synthesis',
     'Multi-View Geometry',
-    'Neural Scene Representation',
     'Robust 3D Reconstruction'
   ],
   links: {
@@ -25,12 +25,13 @@ export const site = {
 } as const;
 
 export const aboutParagraphs = [
-  'I am an undergraduate AI research student specializing in deep learning for 3D computer vision. My research interests center on 3D scene reconstruction, neural rendering, 3D Gaussian Splatting, and Novel View Synthesis.',
-  'Before moving toward 3D reconstruction, I built a foundation in 2D visual understanding, semantic segmentation, and representation learning. This background now informs my interest in robust geometry-aware visual perception under challenging real-world conditions.',
+  'I am an undergraduate AI research student specializing in 3D computer vision. My research interests center on 3D Gaussian Splatting, neural rendering, novel view synthesis, and 3D scene representation.',
+  'Through research experience in 3D hand pose estimation and hand reconstruction, I became interested in how visual observations can be used to infer and represent 3D structure. I am now extending this interest toward scene-level neural representation and robust 3D reconstruction.',
+  'Before moving toward 3D reconstruction, I built a foundation in 2D visual understanding, semantic segmentation, and representation learning. This background now informs my interest in geometry-aware visual perception under challenging real-world conditions.',
 ];
 
 export const researchPhilosophy =
-  'I approach research by identifying core model assumptions and representation choices, then testing them through controlled and reproducible experiments. My goal is to understand the structural principles behind 3D scene representation and reconstruction, rather than simply optimizing benchmark scores.\n\nI am particularly interested in combining geometric constraints, learned representations, and rendering-based supervision to build robust 3D perception systems under challenging real-world conditions.';
+  'I am interested in understanding how representation choices and model assumptions affect 3D reconstruction and view synthesis. Rather than treating models as black boxes, I try to analyze what each component contributes to geometry, appearance, and rendering quality.\n\nMy current goal is to build a solid research foundation through careful paper reading, reproducible implementation, and controlled experiments on 3D Gaussian Splatting, neural rendering, and scene representation.';
 
 export const priorWorkFraming =
   'My selected works reflect a progression from 2D visual understanding and representation learning toward 3D scene reconstruction, neural rendering, and robust geometry-aware perception.';
@@ -124,7 +125,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     title: 'Research / 3D Vision',
-    items: ['3D Gaussian Splatting', 'Novel View Synthesis', 'Multi-View Geometry', 'Camera Geometry'],
+    items: ['3D Gaussian Splatting', 'Neural Rendering', 'Novel View Synthesis', 'Multi-View Geometry', 'Camera Geometry'],
   },
   {
     title: 'Tools & Environments',
@@ -137,7 +138,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Mar 2026 – Present',
     title: 'Undergraduate Researcher',
     org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
-    description: 'Advised by Prof. Seungryul Baek. Focus: robust 3D scene reconstruction, neural rendering, and geometry-aware visual perception.',
+    description: 'Advised by Prof. Seungryul Baek. Focus: 3D hand pose estimation and hand reconstruction, with broader research interests in 3D scene representation and neural rendering.',
   },
   {
     period: 'Nov 2025',

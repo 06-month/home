@@ -43,7 +43,7 @@ export function DashboardMockup() {
           </div>
           <div className="flex items-center gap-1.5 bg-white/5 rounded-md px-2 py-0.5 font-mono text-[9px] text-white/70">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            Active: UVLL-Splat
+            Active: 3DGS Study
           </div>
         </div>
 
