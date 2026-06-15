@@ -17,7 +17,7 @@ export const site = {
   ],
   links: {
     github: 'https://github.com/06-month',
-    blog: 'https://6month.tistory.com/',
+    blog: 'https://archive-06.vercel.app/',
     cv: 'Jun%20Jeon%20CV.pdf?v=10', // Increment cache buster
   },
   email: 'junjeon@edu.hanbat.ac.kr',
