@@ -42,6 +42,14 @@ export function Header() {
             GitHub
           </a>
           <a
+            href={site.links.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden sm:inline-block text-[14px] text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white"
+          >
+            LinkedIn
+          </a>
+          <a
             href={`${import.meta.env.BASE_URL}${site.links.cv}`}
             target="_blank"
             rel="noopener noreferrer"
@@ -54,4 +62,3 @@ export function Header() {
     </header>
   );
 }
-

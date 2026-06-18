@@ -66,6 +66,15 @@ export function Hero() {
               Blog
             </a>
 
+            <a
+              href={site.links.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full border border-hairline bg-canvas/80 dark:bg-white/5 dark:border-white/10 px-5 py-2.5 text-sm font-semibold text-ink-secondary dark:text-neutral-200 hover:bg-canvas-soft dark:hover:bg-white/10 transition duration-150"
+            >
+              LinkedIn
+            </a>
+
             {/* CV Link CTA */}
             <a
               href={`${import.meta.env.BASE_URL}${site.links.cv}`}

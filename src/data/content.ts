@@ -18,6 +18,7 @@ export const site = {
   ],
   links: {
     github: 'https://github.com/06-month',
+    linkedin: 'https://www.linkedin.com/in/jun-jeon-1b61273b2/',
     blog: 'https://archive-06.vercel.app/',
     cv: 'Jun Jeon CV.pdf',
   },
