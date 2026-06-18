@@ -1,6 +1,7 @@
 export interface Project {
   id: string;
   title: string;
+  period?: string;
   keywords: string[];
   description: string;
   href?: string;
@@ -37,4 +38,3 @@ export interface PublicationItem {
   venue: string;
   href?: string;
 }
-

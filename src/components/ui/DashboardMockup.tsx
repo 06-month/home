@@ -39,11 +39,11 @@ export function DashboardMockup() {
             <span className="w-2.5 h-2.5 rounded-full bg-red-500/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/80" />
             <span className="w-2.5 h-2.5 rounded-full bg-green-500/80" />
-            <span className="ml-2 font-mono text-[11px] text-white/50">train_3d_gaussian_splatting.py</span>
+            <span className="ml-2 font-mono text-[11px] text-white/50">train_dynamic_gaussian_splatting.py</span>
           </div>
           <div className="flex items-center gap-1.5 bg-white/5 rounded-md px-2 py-0.5 font-mono text-[9px] text-white/70">
             <span className="w-1.5 h-1.5 rounded-full bg-indigo-400 animate-pulse" />
-            Active: 3DGS Study
+            Active: 4D Scene Study
           </div>
         </div>
 
@@ -51,7 +51,7 @@ export function DashboardMockup() {
         <div className="p-4 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-[11px]">
           {/* Left Side: Code Preview */}
           <div className="flex flex-col border-b sm:border-b-0 sm:border-r border-white/10 pb-4 sm:pb-0 sm:pr-4">
-            <div className="text-white/40 text-[9px] uppercase tracking-wider mb-2 font-bold font-sans">Splatting Pipeline</div>
+            <div className="text-white/40 text-[9px] uppercase tracking-wider mb-2 font-bold font-sans">Dynamic Splatting Pipeline</div>
             <pre className="leading-relaxed text-white/80 overflow-x-auto whitespace-pre font-mono text-[10px]">
               <code>
 {`1: # Diff Rasterizer Config
@@ -65,7 +65,7 @@ export function DashboardMockup() {
 9:     campos=cam_center
 10: )
 11: 
-12: # Splat & Render Scene
+12: # Splat & Render Dynamic Scene
 13: img, radii = rasterizer(
 14:     means3D=xyz,
 15:     opacities=alpha,
@@ -163,4 +163,3 @@ export function DashboardMockup() {
     </div>
   );
 }
-

@@ -19,7 +19,7 @@ export function Hero() {
           </div>
 
           {/* Sohne-inspired Display Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-light leading-[1.05] tracking-[-0.035em] text-ink dark:text-white">
+          <h1 className="whitespace-pre-line text-[34px] sm:text-[44px] lg:text-[48px] font-light leading-[1.05] tracking-[-0.035em] text-ink dark:text-white">
             {site.tagline}
           </h1>
 
@@ -29,7 +29,7 @@ export function Hero() {
 
           <div className="mt-4 flex flex-col gap-1 text-xs sm:text-sm text-ink-mute dark:text-neutral-450">
             <p className="font-medium text-ink-secondary dark:text-neutral-300">{site.affiliation}</p>
-            <p className="font-tabular font-light">{site.address}</p>
+            {site.address && <p className="font-tabular font-light">{site.address}</p>}
           </div>
 
           {/* Keywords as tags */}
@@ -86,4 +86,3 @@ export function Hero() {
     </section>
   );
 }
-

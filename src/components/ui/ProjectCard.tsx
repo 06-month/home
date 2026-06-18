@@ -23,6 +23,12 @@ export function ProjectCard({ project }: ProjectCardProps) {
           )}
         </div>
 
+        {project.period && (
+          <p className="mt-2 font-mono text-[11px] font-semibold uppercase tracking-wide text-ink-mute dark:text-neutral-450 font-tabular">
+            {project.period}
+          </p>
+        )}
+
         {/* Keywords */}
         <div className="mt-3 flex flex-wrap gap-1">
           {project.keywords.map((kw) => (
@@ -76,4 +82,3 @@ export function ProjectCard({ project }: ProjectCardProps) {
     </article>
   );
 }
-

@@ -2,7 +2,7 @@ import { publications, projects } from '@/data/content';
 
 export function Publications() {
   const ongoingResearch = projects.filter(
-    (p) => p.id === 'low-light-3d' || p.id === 'geometry-dataset-refinement'
+    (p) => p.id === 'dynamic-scene-representation' || p.id === 'low-light-3d'
   );
 
   return (
@@ -74,6 +74,11 @@ export function Publications() {
                     <p className="text-xs text-ink-secondary dark:text-neutral-300 font-light leading-relaxed">
                       {proj.description}
                     </p>
+                    {proj.period && (
+                      <p className="text-[11px] text-ink-mute dark:text-neutral-450 font-tabular font-light pt-1">
+                        {proj.period}
+                      </p>
+                    )}
                   </div>
                 </div>
               ))}
@@ -84,4 +89,3 @@ export function Publications() {
     </section>
   );
 }
-
