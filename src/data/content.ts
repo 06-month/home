@@ -43,8 +43,8 @@ export const education: EducationItem[] = [
     institution: 'Hanbat National University',
     period: 'Mar. 2025 – Present',
     degree: 'B.S. in Computer Engineering',
-    gpa: '3.79 / 4.5',
-    majorGpa: '3.79 / 4.5',
+    gpa: '3.85 / 4.5',
+    majorGpa: '3.82 / 4.5',
   },
   {
     institution: 'Pai Chai University',
@@ -172,7 +172,7 @@ export const experiences: ExperienceItem[] = [
     period: 'Coursework',
     title: 'Related Coursework',
     org: 'Hanbat National University',
-    description: 'Artificial Intelligence (A+), Computer Vision (A+), Reinforcement Learning (A+)',
+    description: 'Artificial Intelligence (A+), Computer Vision (A+), Reinforcement Learning (A+), Metaverse and Digital Space Theory (A+)',
   },
   {
     period: '—',

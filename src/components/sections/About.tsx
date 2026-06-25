@@ -38,11 +38,11 @@ export function About() {
             <div className="grid grid-cols-2 gap-4 bg-white dark:bg-white/5 border border-hairline dark:border-white/5 rounded-2xl p-5 shadow-sm text-left">
               <div>
                 <span className="text-[10px] uppercase tracking-wider text-ink-mute dark:text-neutral-400 font-semibold font-sans">Cumulative GPA</span>
-                <div className="text-2xl font-light font-tabular text-primary dark:text-primary-soft mt-1">4.03 <span className="text-xs text-ink-mute dark:text-neutral-400">/ 4.5</span></div>
+                <div className="text-2xl font-light font-tabular text-primary dark:text-primary-soft mt-1">4.02 <span className="text-xs text-ink-mute dark:text-neutral-400">/ 4.5</span></div>
               </div>
               <div className="border-l border-hairline dark:border-white/5 pl-4">
                 <span className="text-[10px] uppercase tracking-wider text-ink-mute dark:text-neutral-400 font-semibold font-sans">Major GPA</span>
-                <div className="text-2xl font-light font-tabular text-primary dark:text-primary-soft mt-1">4.08 <span className="text-xs text-ink-mute dark:text-neutral-400">/ 4.5</span></div>
+                <div className="text-2xl font-light font-tabular text-primary dark:text-primary-soft mt-1">4.07 <span className="text-xs text-ink-mute dark:text-neutral-400">/ 4.5</span></div>
               </div>
             </div>
 
