@@ -5,7 +5,7 @@ export const site = {
   nameKo: '전준',
   tagline: '3D/4D Scene Representation \n & Neural Rendering',
   subline: 'I study how dynamic 3D scenes can be reconstructed, represented, and rendered from visual observations.',
-  affiliation: 'UNIST Vision & Learning Lab (UVLL)',
+  affiliation: 'Studying feed-forward 3DGS and 3D/4D scene reconstruction.',
   address: '', // Removed address per CV update
   keywords: [
     'Spatial Intelligence',
@@ -139,7 +139,7 @@ export const skillGroups: SkillGroup[] = [
 
 export const experiences: ExperienceItem[] = [
   {
-    period: 'Mar. 2026 – Present',
+    period: 'Mar. 2026 – Jun. 2026',
     title: 'Undergraduate Researcher',
     org: 'UNIST Vision & Learning Lab (UVLL), Ulsan National Institute of Science and Technology',
     description: 'Advised by Prof. Seungryul Baek. Undergraduate research on 3D hand pose estimation and 3D hand reconstruction.',
