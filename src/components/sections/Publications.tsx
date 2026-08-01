@@ -1,9 +1,7 @@
 import { publications, projects } from '@/data/content';
 
 export function Publications() {
-  const ongoingResearch = projects.filter(
-    (p) => p.id === 'dynamic-scene-representation' || p.id === 'low-light-3d'
-  );
+  const ongoingResearch = projects.filter((p) => p.ongoing);
 
   return (
     <section id="publications" className="border-t border-hairline bg-canvas px-4 py-20 dark:bg-[#0b1528] dark:border-neutral-850 sm:px-6 transition-colors duration-300">
