@@ -1,78 +1,121 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
 
-@theme {
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+@custom-variant dark (&:where(.dark, .dark *));
 
-  --color-primary: #533afd;
-  --color-primary-deep: #4434d4;
-  --color-primary-press: #2e2b8c;
-  --color-primary-soft: #665efd;
-  --color-primary-subdued: #b9b9f9;
-  
-  --color-brand-dark-900: #1c1e54;
-  --color-ruby: #ea2261;
-  --color-magenta: #f96bee;
-  --color-lemon: #9b6829;
-  
-  --color-canvas: #ffffff;
-  --color-canvas-soft: #f6f9fc;
-  --color-canvas-cream: #f5e9d4;
-  
-  --color-hairline: #e3e8ee;
-  --color-hairline-input: #a8c3de;
-  
-  --color-ink: #0d253d;
-  --color-ink-secondary: #273951;
-  --color-ink-mute: #64748d;
-  --color-ink-mute-2: #61718a;
-  --color-on-primary: #ffffff;
+/*
+ * Near-monochrome palette shared with the research archive (archive-06.vercel.app):
+ * one paper tone, white cards, and a single inverted surface doing the work of an
+ * accent colour. Themes swap these variables, so components use plain `bg-surface`
+ * and `text-ink` rather than paired light/dark utilities.
+ */
+:root {
+  --c-canvas: #f4f4f5;
+  --c-surface: #ffffff;
+  --c-surface-2: #fafafa;
+  --c-inverse: #101011;
+  --c-on-inverse: #f4f4f5;
+  --c-line: #e5e5e8;
+  --c-line-soft: #ededf0;
+  --c-ink: #101011;
+  --c-ink-2: #52525b;
+  --c-ink-3: #8e8e97;
+  --c-elevate: 0 1px 2px rgba(16, 16, 17, 0.04), 0 12px 32px -18px rgba(16, 16, 17, 0.18);
 }
 
-@custom-variant dark (&:where(.dark, .dark *));
+.dark {
+  --c-canvas: #09090a;
+  --c-surface: #131315;
+  --c-surface-2: #1a1a1d;
+  --c-inverse: #f4f4f5;
+  --c-on-inverse: #101011;
+  --c-line: #26262b;
+  --c-line-soft: #1e1e22;
+  --c-ink: #f4f4f5;
+  --c-ink-2: #a9a9b3;
+  --c-ink-3: #74747d;
+  --c-elevate: 0 1px 2px rgba(0, 0, 0, 0.5), 0 12px 32px -18px rgba(0, 0, 0, 0.7);
+}
+
+@theme {
+  --font-sans: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --color-canvas: var(--c-canvas);
+  --color-surface: var(--c-surface);
+  --color-surface-2: var(--c-surface-2);
+  --color-inverse: var(--c-inverse);
+  --color-on-inverse: var(--c-on-inverse);
+  --color-line: var(--c-line);
+  --color-line-soft: var(--c-line-soft);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-ink-3: var(--c-ink-3);
+
+  --radius-card: 20px;
+}
 
 @layer base {
   html {
     @apply scroll-smooth;
   }
+
   body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-feature-settings: "ss01" on;
-    font-weight: 300;
-    @apply bg-white text-[#0d253d] antialiased dark:bg-[#0b1528] dark:text-neutral-100;
+    @apply bg-canvas text-ink antialiased;
+    font-family: var(--font-sans);
+    font-weight: 400;
+    font-feature-settings: 'ss01' on;
+  }
+
+  ::selection {
+    background: var(--c-ink);
+    color: var(--c-canvas);
+  }
+}
+
+@layer components {
+  /* Page shell: every section aligns to this measure. */
+  .shell {
+    @apply mx-auto w-full max-w-5xl px-5 sm:px-6;
+  }
+
+  .card {
+    @apply rounded-[var(--radius-card)] border border-line bg-surface;
+    box-shadow: var(--c-elevate);
+  }
+
+  /* Micro label used above every section and inside cards. */
+  .label {
+    @apply text-[11px] font-bold uppercase tracking-[0.14em] text-ink-3;
+  }
+
+  .pill {
+    @apply inline-flex items-center rounded-full border border-line bg-surface-2 px-3 py-1 text-[12px] font-medium text-ink-2;
+  }
+
+  .pill-solid {
+    @apply inline-flex items-center rounded-full bg-inverse px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-on-inverse;
+  }
+
+  .meta {
+    @apply font-mono text-[11px] tracking-[0.04em] text-ink-3;
+    font-feature-settings: 'tnum' on;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full border border-line bg-surface px-5 py-2.5 text-[13px] font-semibold text-ink transition duration-150 hover:bg-surface-2;
+  }
+
+  .btn-solid {
+    @apply inline-flex items-center justify-center gap-1.5 rounded-full bg-inverse px-5 py-2.5 text-[13px] font-semibold text-on-inverse transition duration-150 hover:opacity-85;
+  }
+
+  .link-row {
+    @apply flex items-start justify-between gap-5 border-b border-line-soft py-4 transition duration-150;
   }
 }
 
 .font-tabular {
-  font-feature-settings: "tnum" on;
-}
-
-/* Animations for gradient mesh */
-@keyframes mesh-pulse-1 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.1); }
-  66% { transform: translate(-20px, 20px) scale(0.9); }
-}
-
-@keyframes mesh-pulse-2 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(-20px, 30px) scale(0.9); }
-  66% { transform: translate(40px, -20px) scale(1.15); }
-}
-
-@keyframes mesh-pulse-3 {
-  0%, 100% { transform: translate(0px, 0px) scale(1); }
-  33% { transform: translate(20px, 20px) scale(1.05); }
-  66% { transform: translate(-30px, -30px) scale(0.95); }
-}
-
-.animate-mesh-1 {
-  animation: mesh-pulse-1 12s infinite alternate ease-in-out;
-}
-.animate-mesh-2 {
-  animation: mesh-pulse-2 15s infinite alternate ease-in-out;
-}
-.animate-mesh-3 {
-  animation: mesh-pulse-3 18s infinite alternate ease-in-out;
+  font-feature-settings: 'tnum' on;
 }

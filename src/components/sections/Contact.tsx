@@ -1,81 +1,41 @@
 import { site, researchStatement } from '@/data/content';
 
 // Phone number intentionally omitted — it stays on the CV PDF, not on a public page.
-const links: { label: string; href: string; icon: 'mail' | 'github' | 'linkedin' | 'blog' | 'cv' }[] = [
-  { label: 'Email', href: `mailto:${site.email}`, icon: 'mail' },
-  { label: 'GitHub', href: site.links.github, icon: 'github' },
-  { label: 'LinkedIn', href: site.links.linkedin, icon: 'linkedin' },
-  { label: 'Research Notes', href: site.links.blog, icon: 'blog' },
-  { label: 'CV', href: `${import.meta.env.BASE_URL}${site.links.cv}`, icon: 'cv' },
+const links = [
+  { label: 'Email', href: `mailto:${site.email}` },
+  { label: 'GitHub', href: site.links.github },
+  { label: 'LinkedIn', href: site.links.linkedin },
+  { label: 'Research Notes', href: site.links.blog },
+  { label: 'CV', href: `${import.meta.env.BASE_URL}${site.links.cv}` },
 ];
 
-function Icon({ name }: { name: string }) {
-  if (name === 'mail')
-    return (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-      </svg>
-    );
-  if (name === 'github')
-    return (
-      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-        <path fillRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clipRule="evenodd" />
-      </svg>
-    );
-  if (name === 'linkedin')
-    return (
-      <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.024-3.037-1.849-3.037-1.851 0-2.134 1.447-2.134 2.941v5.665H9.356V9h3.414v1.561h.049c.476-.9 1.637-1.849 3.369-1.849 3.602 0 4.268 2.371 4.268 5.455v6.285h-.009zM5.337 7.433a2.063 2.063 0 1 1 0-4.126 2.063 2.063 0 0 1 0 4.126zM7.114 20.452H3.556V9h3.558v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-      </svg>
-    );
-  if (name === 'blog')
-    return (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
-      </svg>
-    );
-  if (name === 'cv')
-    return (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
-      </svg>
-    );
-  return null;
-}
 export function Contact() {
   return (
-    <footer id="contact" className="border-t border-hairline bg-canvas-soft dark:bg-[#071829]/50 px-4 py-16 dark:border-neutral-850 sm:px-6 transition-colors duration-300">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-          {/* Left Column: Brand Info & Copyright */}
-          <div className="md:col-span-4 flex flex-col items-start text-left space-y-3">
-            <span className="font-semibold text-[16px] text-ink dark:text-white tracking-tight font-sans">
+    <footer id="contact" className="mt-8 border-t border-line bg-surface">
+      <div className="shell py-14">
+        <div className="flex flex-col justify-between gap-10 md:flex-row md:items-start">
+          <div className="max-w-sm">
+            <span className="text-[15px] font-extrabold tracking-[-0.02em] text-ink">
               {site.name} ({site.nameKo})
             </span>
-            <p className="text-[13px] text-ink-mute dark:text-neutral-450 font-light max-w-sm leading-relaxed">
-              {researchStatement}
-            </p>
-            <p className="text-[12px] text-ink-mute dark:text-neutral-500 font-tabular font-light pt-2">
-              © {new Date().getFullYear()} {site.name}. All rights reserved.
+            <p className="mt-3 text-[13px] leading-relaxed text-ink-2">{researchStatement}</p>
+            <p className="meta mt-5">
+              © {new Date().getFullYear()} {site.name}
             </p>
           </div>
 
-          {/* Right Column: Contact Links */}
-          <div className="md:col-span-8 flex flex-col md:items-end space-y-4">
-            <span className="text-[11px] uppercase tracking-wider text-ink-mute dark:text-neutral-450 font-bold font-sans">
-              Get in Touch
-            </span>
-            <ul className="flex flex-wrap gap-2 md:justify-end">
-              {links.map(({ label, href, icon }) => (
+          <div className="md:text-right">
+            <span className="label">Get in Touch</span>
+            <ul className="mt-4 flex flex-wrap gap-2 md:justify-end">
+              {links.map(({ label, href }) => (
                 <li key={label}>
                   <a
                     href={href}
                     target={href.startsWith('mailto:') ? undefined : '_blank'}
                     rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
-                    className="inline-flex items-center gap-2 rounded-full border border-hairline bg-canvas px-4 py-2 text-xs font-medium text-ink-secondary dark:bg-[#0b1528] dark:border-white/10 dark:text-neutral-350 hover:bg-canvas-soft dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary-soft hover:border-primary/50 dark:hover:border-primary-soft/50 shadow-sm transition duration-150"
+                    className="btn px-4 py-2 text-[12px]"
                   >
-                    <Icon name={icon} />
-                    <span>{label}</span>
+                    {label}
                   </a>
                 </li>
               ))}

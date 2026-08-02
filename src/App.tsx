@@ -29,9 +29,8 @@ export default function App() {
         <ResearchNotes />
         <Skills />
         <Experience />
-        <Contact />
       </main>
+      <Contact />
     </>
   );
 }
-
