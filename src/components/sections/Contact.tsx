@@ -1,11 +1,11 @@
-import { site } from '@/data/content';
+import { site, researchStatement } from '@/data/content';
 
-const links: { label: string; href: string; icon: 'mail' | 'phone' | 'github' | 'linkedin' | 'blog' | 'cv' }[] = [
+// Phone number intentionally omitted — it stays on the CV PDF, not on a public page.
+const links: { label: string; href: string; icon: 'mail' | 'github' | 'linkedin' | 'blog' | 'cv' }[] = [
   { label: 'Email', href: `mailto:${site.email}`, icon: 'mail' },
-  { label: site.phone, href: `tel:${site.phone.replace(/\s/g, '')}`, icon: 'phone' },
   { label: 'GitHub', href: site.links.github, icon: 'github' },
   { label: 'LinkedIn', href: site.links.linkedin, icon: 'linkedin' },
-  { label: 'Blog', href: site.links.blog, icon: 'blog' },
+  { label: 'Research Notes', href: site.links.blog, icon: 'blog' },
   { label: 'CV', href: `${import.meta.env.BASE_URL}${site.links.cv}`, icon: 'cv' },
 ];
 
@@ -34,12 +34,6 @@ function Icon({ name }: { name: string }) {
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
       </svg>
     );
-  if (name === 'phone')
-    return (
-      <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-      </svg>
-    );
   if (name === 'cv')
     return (
       <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -59,7 +53,7 @@ export function Contact() {
               {site.name} ({site.nameKo})
             </span>
             <p className="text-[13px] text-ink-mute dark:text-neutral-450 font-light max-w-sm leading-relaxed">
-              AI Research Student focused on 3D scene representation, neural rendering, and robust visual perception.
+              {researchStatement}
             </p>
             <p className="text-[12px] text-ink-mute dark:text-neutral-500 font-tabular font-light pt-2">
               © {new Date().getFullYear()} {site.name}. All rights reserved.
@@ -76,12 +70,12 @@ export function Contact() {
                 <li key={label}>
                   <a
                     href={href}
-                    target={href.startsWith('mailto:') || href.startsWith('tel:') ? undefined : '_blank'}
+                    target={href.startsWith('mailto:') ? undefined : '_blank'}
                     rel={href.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
                     className="inline-flex items-center gap-2 rounded-full border border-hairline bg-canvas px-4 py-2 text-xs font-medium text-ink-secondary dark:bg-[#0b1528] dark:border-white/10 dark:text-neutral-350 hover:bg-canvas-soft dark:hover:bg-white/5 hover:text-primary dark:hover:text-primary-soft hover:border-primary/50 dark:hover:border-primary-soft/50 shadow-sm transition duration-150"
                   >
                     <Icon name={icon} />
-                    <span className={icon === 'phone' ? 'font-tabular' : ''}>{label}</span>
+                    <span>{label}</span>
                   </a>
                 </li>
               ))}

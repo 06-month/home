@@ -1,4 +1,4 @@
-import { aboutParagraphs, researchPhilosophy, education } from '@/data/content';
+import { aboutParagraphs, researchPhilosophy, education, coursework } from '@/data/content';
 
 export function About() {
   return (
@@ -67,6 +67,23 @@ export function About() {
                   )}
                 </div>
               ))}
+            </div>
+
+            {/* Relevant Coursework — belongs under Education, not the research timeline */}
+            <div className="text-left">
+              <h4 className="text-[11px] uppercase tracking-wider text-ink-mute dark:text-neutral-450 font-bold font-sans">
+                Relevant Coursework
+              </h4>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {coursework.map((c) => (
+                  <span
+                    key={c}
+                    className="rounded-full bg-canvas border border-hairline px-2.5 py-0.5 text-xs text-ink-secondary dark:bg-white/5 dark:border-white/5 dark:text-neutral-350 font-sans"
+                  >
+                    {c}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>

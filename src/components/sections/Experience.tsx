@@ -1,4 +1,4 @@
-import { experiences } from '@/data/content';
+import { experiences, additional } from '@/data/content';
 
 export function Experience() {
   return (
@@ -35,6 +35,25 @@ export function Experience() {
               )}
             </div>
           ))}
+        </div>
+
+        {/* Certifications and language scores — deliberately kept out of the timeline above */}
+        <div className="mt-14 border-t border-hairline dark:border-white/10 pt-8 text-left">
+          <h4 className="text-[11px] uppercase tracking-wider text-ink-mute dark:text-neutral-450 font-bold font-sans">
+            Additional
+          </h4>
+          <dl className="mt-4 grid grid-cols-1 gap-x-10 gap-y-3 sm:grid-cols-[max-content_1fr]">
+            {additional.map(({ label, items }) => (
+              <div key={label} className="contents">
+                <dt className="text-[13px] font-medium text-ink-secondary dark:text-neutral-300 font-sans">
+                  {label}
+                </dt>
+                <dd className="text-[13px] text-ink-mute dark:text-neutral-450 font-light">
+                  {items.join(' · ')}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

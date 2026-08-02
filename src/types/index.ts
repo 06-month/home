@@ -8,7 +8,15 @@ export interface Project {
   label?: string;
   blogHref?: string;
   ongoing?: boolean;
+  /** Work from the earlier 2D-vision identity; rendered in a compressed list. */
+  earlier?: boolean;
   type?: string;
+}
+
+export interface NoteItem {
+  title: string;
+  href: string;
+  summary: string;
 }
 
 export interface SkillGroup {

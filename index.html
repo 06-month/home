@@ -4,12 +4,65 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Jun Jeon — AI Research Student. Visual understanding: segmentation, pose estimation, recognition. Hanbat University · AiR Lab." />
-    <meta name="keywords" content="Jun Jeon, 전준, Computer Vision, AI, Hanbat University, AiR Lab, Semantic Segmentation, Federated Learning" />
-    <meta property="og:title" content="Jun Jeon | AI Research Student" />
-    <meta property="og:description" content="Visual understanding — segmentation, pose estimation, recognition. Hanbat University · AiR Lab." />
+    <!-- Keep in sync with `researchStatement` in src/data/content.ts -->
+    <meta
+      name="description"
+      content="Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling. Hanbat National University."
+    />
+    <meta
+      name="keywords"
+      content="Jun Jeon, 전준, Feed-Forward 3D Reconstruction, 4D Scene Reconstruction, Gaussian Splatting, 3DGS, Dynamic Gaussians, Motion Modeling, Neural Rendering, Novel View Synthesis, Hanbat National University"
+    />
+    <meta name="author" content="Jun Jeon" />
+    <link rel="canonical" href="https://06-month.github.io/home/" />
+
+    <meta property="og:title" content="Jun Jeon — Feed-Forward 3D/4D Scene Reconstruction" />
+    <meta
+      property="og:description"
+      content="Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling. Hanbat National University."
+    />
     <meta property="og:type" content="website" />
-    <title>Jun Jeon | AI Research Student</title>
+    <meta property="og:url" content="https://06-month.github.io/home/" />
+    <meta property="og:site_name" content="Jun Jeon" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Jun Jeon — Feed-Forward 3D/4D Scene Reconstruction" />
+    <meta
+      name="twitter:description"
+      content="Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling."
+    />
+
+    <title>Jun Jeon — Feed-Forward 3D/4D Scene Reconstruction</title>
+
+    <!-- The body is client-rendered, so this is most of what a crawler can read. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Jun Jeon",
+        "alternateName": "전준",
+        "jobTitle": "Undergraduate Researcher",
+        "description": "Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.",
+        "url": "https://06-month.github.io/home/",
+        "email": "mailto:junjeon@edu.hanbat.ac.kr",
+        "affiliation": {
+          "@type": "CollegeOrUniversity",
+          "name": "Hanbat National University"
+        },
+        "knowsAbout": [
+          "Feed-Forward 3D/4D Scene Reconstruction",
+          "Dynamic Gaussian Representations",
+          "Motion Modeling",
+          "Gaussian Splatting",
+          "Neural Rendering"
+        ],
+        "sameAs": [
+          "https://github.com/06-month",
+          "https://www.linkedin.com/in/jun-jeon-1b61273b2/",
+          "https://archive-06.vercel.app/"
+        ]
+      }
+    </script>
   </head>
   <body>
     <script>
@@ -19,7 +72,22 @@
         else document.documentElement.classList.add(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
       })();
     </script>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <h1>Jun Jeon (전준) — Undergraduate Researcher</h1>
+        <p>
+          Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian
+          representations, and motion modeling. Hanbat National University, Department of Computer
+          Engineering.
+        </p>
+        <ul>
+          <li><a href="https://github.com/06-month">GitHub</a></li>
+          <li><a href="https://archive-06.vercel.app/">Research Notes</a></li>
+          <li><a href="https://www.linkedin.com/in/jun-jeon-1b61273b2/">LinkedIn</a></li>
+          <li><a href="mailto:junjeon@edu.hanbat.ac.kr">junjeon@edu.hanbat.ac.kr</a></li>
+        </ul>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

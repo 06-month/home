@@ -1,19 +1,21 @@
-import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationItem } from '@/types';
+import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationItem, NoteItem } from '@/types';
+
+// Single source of truth for how the research focus is stated. Used verbatim in the
+// hero, the footer, and index.html's meta tags — keep those three in sync when editing.
+export const researchStatement =
+  'Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.';
 
 export const site = {
   name: 'Jun Jeon',
   nameKo: '전준',
+  role: 'Undergraduate Researcher',
   tagline: 'Feed-Forward 3D/4D \n Scene Reconstruction',
-  subline: 'I study how dynamic 3D scenes can be reconstructed, represented, and rendered from visual observations.',
-  affiliation: 'Studying feed-forward 3DGS and 3D/4D scene reconstruction.',
+  subline: researchStatement,
   address: '', // Removed address per CV update
   keywords: [
-    'Feed-Forward Reconstruction',
-    '3D/4D Scene Reconstruction',
+    'Feed-Forward 3D/4D Reconstruction',
     'Dynamic Gaussian Representations',
-    'Gaussian Splatting',
     'Motion Modeling',
-    'Efficient Neural Rendering'
   ],
   links: {
     github: 'https://github.com/06-month',
@@ -22,20 +24,19 @@ export const site = {
     cv: 'Jun Jeon CV.pdf',
   },
   email: 'junjeon@edu.hanbat.ac.kr',
-  phone: '+82 10-4107-4189',
 } as const;
 
 export const aboutParagraphs = [
-  'I am an undergraduate AI research student interested in feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, motion modeling, and efficient neural rendering.',
+  'I am an undergraduate researcher interested in feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.',
   'Through research experience in 3D hand pose estimation and 3D hand reconstruction, I became interested in how visual observations can be used to infer and represent 3D structure. I am now extending this interest toward dynamic, scene-level neural representation.',
   'Before moving toward 3D/4D reconstruction, I built a foundation in 2D visual understanding, image classification, and semantic segmentation. This background now informs my interest in geometry-aware and motion-aware visual perception.',
 ];
 
 export const researchPhilosophy =
-  'I am interested in understanding how representation choices and model assumptions affect 3D/4D reconstruction, dynamic scene modeling, and view synthesis. Rather than treating models as black boxes, I try to analyze what each component contributes to geometry, appearance, motion, and rendering quality.\n\nMy current goal is to build a solid research foundation through careful paper reading, reproducible implementation, and controlled experiments on feed-forward Gaussian reconstruction, motion modeling, and efficient neural rendering.';
+  'I am interested in understanding how representation choices and model assumptions affect 3D/4D reconstruction, dynamic scene modeling, and view synthesis. Rather than treating models as black boxes, I try to analyze what each component contributes to geometry, appearance, motion, and rendering quality.\n\nMy current goal is to build a solid research foundation through careful paper reading, reproducible implementation, and controlled experiments on feed-forward Gaussian reconstruction and motion modeling.';
 
 export const priorWorkFraming =
-  'My selected works reflect a progression from 2D visual understanding toward feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and efficient neural rendering.';
+  'My selected works reflect a progression from 2D visual understanding toward feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.';
 
 export const education: EducationItem[] = [
   {
@@ -52,6 +53,13 @@ export const education: EducationItem[] = [
     gpa: '4.14 / 4.5',
     majorGpa: '4.32 / 4.5',
   },
+];
+
+export const coursework = [
+  'Artificial Intelligence (A+)',
+  'Computer Vision (A+)',
+  'Reinforcement Learning (A+)',
+  'Metaverse and Digital Space Theory (A+)',
 ];
 
 export const publications: PublicationItem[] = [
@@ -88,6 +96,7 @@ export const projects: Project[] = [
     keywords: ['Semantic Segmentation', 'Satellite Imagery', 'Deep Learning'],
     description: 'Developed semantic segmentation models for building-region extraction from satellite imagery using deep learning models.',
     ongoing: false,
+    earlier: true,
     type: 'Lab Coding Seminar',
   },
   {
@@ -98,6 +107,7 @@ export const projects: Project[] = [
     description: 'Conducted federated learning research on CLIP2FL with balanced knowledge distillation, resulting in a conference publication at KICS Winter Conference 2026.',
     href: 'https://github.com/06-month/CLIP2FL_BKD',
     label: 'GitHub',
+    earlier: true,
     type: 'IoT Project',
   },
   {
@@ -108,7 +118,45 @@ export const projects: Project[] = [
     description: 'Developed semantic segmentation models for satellite images covering three cloud types: thick cloud, thin cloud, and cloud shadow.',
     href: 'https://github.com/06-month/Satellite-Cloud-Semantic-Segmentation',
     label: 'GitHub',
+    earlier: true,
     type: 'Computer Vision Term Project',
+  },
+];
+
+// Obsidian-style research archive. Only notes verified to exist are linked here —
+// add new ones as they are published rather than guessing slugs.
+export const noteArchive = {
+  total: 135,
+  href: 'https://archive-06.vercel.app/',
+  blurb:
+    '135 connected notes on 3D reconstruction, Gaussian Splatting, and neural rendering — paper reads with derivations, ablation figures, and stated limitations.',
+};
+
+export const researchNotes: NoteItem[] = [
+  {
+    title: 'ATSplat',
+    href: 'https://archive-06.vercel.app/wiki/atsplat',
+    summary: 'Adaptive Token Expansion for compact feed-forward 3DGS.',
+  },
+  {
+    title: '4D Scaffold-GS',
+    href: 'https://archive-06.vercel.app/wiki/4d-scaffold-gs',
+    summary: 'Dynamic-aware anchor growing for storage-efficient 4D GS.',
+  },
+  {
+    title: 'MoSca',
+    href: 'https://archive-06.vercel.app/wiki/mosca',
+    summary: '4D Motion Scaffolds for dynamic GS from casual video.',
+  },
+  {
+    title: '3D Gaussian Splatting',
+    href: 'https://archive-06.vercel.app/wiki/3d-gaussian-splatting',
+    summary: 'Core concept note on 3D scene representation and novel view synthesis.',
+  },
+  {
+    title: 'NeRF',
+    href: 'https://archive-06.vercel.app/wiki/nerf',
+    summary: 'Neural radiance fields: representation and volume rendering.',
   },
 ];
 
@@ -135,39 +183,31 @@ export const experiences: ExperienceItem[] = [
     description: 'Advised by Prof. Seungryul Baek. Undergraduate research on 3D hand pose estimation and 3D hand reconstruction.',
   },
   {
-    period: 'Nov 2025',
-    title: '1st Place — Open Source Software Utilization Competition',
-    org: 'Hanbat National University',
-    description: 'Developed Budgetly: an OCR-based financial management web application.',
-  },
-  {
-    period: '—',
-    title: 'AWS Certified Cloud Practitioner (CLF-C02)',
-    org: 'Amazon Web Services (Certification)',
-    description: '',
-  },
-  {
-    period: '—',
-    title: 'Naver Cloud Platform Certified Associate (NCA)',
-    org: 'Naver Cloud (Certification)',
-    description: '',
-  },
-  {
     period: 'Jun. 2025 – Mar. 2026',
     title: 'Undergraduate Researcher',
     org: 'Artificial Intelligence and Robotics Laboratory (AiRLab), Hanbat National University',
     description: 'Advised by Prof. Dong-Geol Choi. Undergraduate research on computer vision, image classification, and semantic segmentation.',
   },
   {
-    period: 'Coursework',
-    title: 'Related Coursework',
+    period: 'Nov. 2025',
+    title: '1st Place — Open Source Software Utilization Competition',
     org: 'Hanbat National University',
-    description: 'Artificial Intelligence (A+), Computer Vision (A+), Reinforcement Learning (A+), Metaverse and Digital Space Theory (A+)',
+    description: 'Developed Budgetly: an OCR-based financial management web application.',
+  },
+];
+
+// Kept out of the research timeline on purpose — these are low-signal for research
+// applications and dilute the section when interleaved with lab experience.
+export const additional: { label: string; items: string[] }[] = [
+  {
+    label: 'Certifications',
+    items: [
+      'AWS Certified Cloud Practitioner (CLF-C02)',
+      'Naver Cloud Platform Certified Associate (NCA)',
+    ],
   },
   {
-    period: '—',
-    title: 'TOEIC 800',
-    org: 'ETS (Language Proficiency)',
-    description: '',
+    label: 'English',
+    items: ['TOEIC 800'],
   },
 ];

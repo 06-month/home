@@ -14,7 +14,7 @@ export function Hero() {
           {/* Subdued Indigo Tag Pill */}
           <div className="inline-flex mb-4">
             <span className="rounded-full bg-primary-subdued/30 dark:bg-primary-subdued/10 px-3 py-1 text-xs font-semibold tracking-wide text-primary-deep dark:text-primary-soft uppercase font-tabular">
-              {site.nameKo} · AI Research Student
+              {site.nameKo} · {site.role}
             </span>
           </div>
 
@@ -27,10 +27,11 @@ export function Hero() {
             {site.subline}
           </p>
 
-          <div className="mt-4 flex flex-col gap-1 text-xs sm:text-sm text-ink-mute dark:text-neutral-450">
-            <p className="font-medium text-ink-secondary dark:text-neutral-300">{site.affiliation}</p>
-            {site.address && <p className="font-tabular font-light">{site.address}</p>}
-          </div>
+          {site.address && (
+            <div className="mt-4 text-xs sm:text-sm text-ink-mute dark:text-neutral-450">
+              <p className="font-tabular font-light">{site.address}</p>
+            </div>
+          )}
 
           {/* Keywords as tags */}
           <div className="mt-6 flex flex-wrap gap-1.5 max-w-lg">
@@ -63,7 +64,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full border border-hairline bg-canvas/80 dark:bg-white/5 dark:border-white/10 px-5 py-2.5 text-sm font-semibold text-ink-secondary dark:text-neutral-200 hover:bg-canvas-soft dark:hover:bg-white/10 transition duration-150"
             >
-              Blog
+              Notes
             </a>
 
             <a
