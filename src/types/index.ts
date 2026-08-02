@@ -13,10 +13,14 @@ export interface Project {
   type?: string;
 }
 
-export interface NoteItem {
+export interface ArticleItem {
+  tag: string;
+  /** Publication date as shown on the archive, e.g. "2026.07.17". */
+  date: string;
   title: string;
   href: string;
-  summary: string;
+  /** Reviews from the earlier hand-pose reading; collapsed by default. */
+  earlier?: boolean;
 }
 
 export interface SkillGroup {

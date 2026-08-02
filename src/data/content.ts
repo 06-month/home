@@ -1,4 +1,4 @@
-import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationItem, NoteItem } from '@/types';
+import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationItem, ArticleItem } from '@/types';
 
 // Single source of truth for how the research focus is stated. Used verbatim in the
 // hero, the footer, and index.html's meta tags — keep those three in sync when editing.
@@ -123,40 +123,79 @@ export const projects: Project[] = [
   },
 ];
 
-// Obsidian-style research archive. Only notes verified to exist are linked here —
-// add new ones as they are published rather than guessing slugs.
 export const noteArchive = {
+  /** Interlinked wiki notes backing the write-ups; the archive states this count. */
   total: 135,
   href: 'https://archive-06.vercel.app/',
+  articlesHref: 'https://archive-06.vercel.app/blog',
   blurb:
-    '135 connected notes on 3D reconstruction, Gaussian Splatting, and neural rendering — paper reads with derivations, ablation figures, and stated limitations.',
+    'Paper reviews I write while working through 3D/4D reconstruction, backed by an interlinked wiki of 135 concept notes.',
 };
 
-export const researchNotes: NoteItem[] = [
+const ARTICLE_BASE = 'https://archive-06.vercel.app/blog/';
+
+/**
+ * Reviews written on the archive. Slugs are verified against its article index —
+ * add new entries from there rather than guessing.
+ */
+export const articles: ArticleItem[] = [
   {
-    title: 'ATSplat',
-    href: 'https://archive-06.vercel.app/wiki/atsplat',
-    summary: 'Adaptive Token Expansion for compact feed-forward 3DGS.',
+    tag: '3DGS',
+    date: '2026.07.17',
+    title: 'pixelSplat: 3D Gaussian Splats from Image Pairs for Scalable Generalizable 3D Reconstruction',
+    href: `${ARTICLE_BASE}pixelsplat-3d-gaussian-splats-from-image-pairs-for-scalable-generalizable-3d-reconstruction-리뷰`,
   },
   {
-    title: '4D Scaffold-GS',
-    href: 'https://archive-06.vercel.app/wiki/4d-scaffold-gs',
-    summary: 'Dynamic-aware anchor growing for storage-efficient 4D GS.',
+    tag: '3DGS',
+    date: '2026.06.22',
+    title: '4D Gaussian Splatting for Real-Time Dynamic Scene Rendering',
+    href: `${ARTICLE_BASE}4d-gaussian-splatting-for-real-time-dynamic-scene-rendering-리뷰`,
   },
   {
-    title: 'MoSca',
-    href: 'https://archive-06.vercel.app/wiki/mosca',
-    summary: '4D Motion Scaffolds for dynamic GS from casual video.',
+    tag: '3DGS',
+    date: '2026.06.21',
+    title: 'Deformable 3D Gaussians for High-Fidelity Monocular Dynamic Scene Reconstruction',
+    href: `${ARTICLE_BASE}deformable-3d-gaussians-for-high-fidelity-monocular-dynamic-scene-reconstruction-리뷰`,
   },
   {
-    title: '3D Gaussian Splatting',
-    href: 'https://archive-06.vercel.app/wiki/3d-gaussian-splatting',
-    summary: 'Core concept note on 3D scene representation and novel view synthesis.',
+    tag: '3DGS',
+    date: '2026.06.19',
+    title: '3D Gaussian Splatting for Real-Time Radiance Field Rendering',
+    href: `${ARTICLE_BASE}3d-gaussian-splatting-for-real-time-radiance-field-rendering-리뷰`,
   },
   {
-    title: 'NeRF',
-    href: 'https://archive-06.vercel.app/wiki/nerf',
-    summary: 'Neural radiance fields: representation and volume rendering.',
+    tag: '3DGS',
+    date: '2026.06.18',
+    title: 'NeRF: Representing Scenes as Neural Radiance Fields for View Synthesis',
+    href: `${ARTICLE_BASE}nerf-representing-scenes-as-neural-radiance-fields-for-view-synthesis-리뷰`,
+  },
+  {
+    tag: 'Hand Pose',
+    date: '2026.02.06',
+    title: 'Model-based Deep Hand Pose Estimation',
+    href: `${ARTICLE_BASE}model-based-deep-hand-pose-estimation-리뷰`,
+    earlier: true,
+  },
+  {
+    tag: 'Hand Pose',
+    date: '2026.02.03',
+    title: 'Modeling and Capturing Hands and Bodies Together (MANO)',
+    href: `${ARTICLE_BASE}modeling-and-capturing-hands-and-bodies-together-mano-리뷰`,
+    earlier: true,
+  },
+  {
+    tag: 'Hand Pose',
+    date: '2026.01.19',
+    title: 'Depth-Based Hand Pose Estimation',
+    href: `${ARTICLE_BASE}depth-based-hand-pose-estimation-리뷰`,
+    earlier: true,
+  },
+  {
+    tag: 'Hand Pose',
+    date: '2026.01.19',
+    title: 'Region Ensemble Network (REN)',
+    href: `${ARTICLE_BASE}region-ensemble-network-ren-리뷰`,
+    earlier: true,
   },
 ];
 

@@ -4,7 +4,7 @@ import { site } from '@/data/content';
 const navItems = [
   { label: 'About', href: '#about' },
   { label: 'Work', href: '#work' },
-  { label: 'Notes', href: '#notes' },
+  { label: 'Writing', href: '#notes' },
   { label: 'Experience', href: '#experience' },
 ];
 
