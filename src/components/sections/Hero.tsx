@@ -1,13 +1,19 @@
 import { site, noteArchive } from '@/data/content';
 import { GaussianField } from '@/components/ui/GaussianField';
-import { GitHubMark, LinkedInMark, NotesMark, CVMark } from '@/components/ui/icons';
+import { GitHubMark, LinkedInMark, NotesMark, MailMark, CVMark } from '@/components/ui/icons';
 
-// Icon-only links; the accessible name lives in aria-label/title, not in visible text.
+// Mark + label pills. `external: false` keeps mailto and the local CV file out of a new tab.
 const heroLinks = [
-  { label: 'GitHub', href: site.links.github, Mark: GitHubMark },
-  { label: 'Research Notes', href: site.links.blog, Mark: NotesMark },
-  { label: 'LinkedIn', href: site.links.linkedin, Mark: LinkedInMark },
-  { label: 'Curriculum Vitae', href: `${import.meta.env.BASE_URL}${site.links.cv}`, Mark: CVMark },
+  { label: 'GitHub', href: site.links.github, Mark: GitHubMark, external: true },
+  { label: 'LinkedIn', href: site.links.linkedin, Mark: LinkedInMark, external: true },
+  { label: 'Research Notes', href: site.links.blog, Mark: NotesMark, external: true },
+  { label: 'Email Contact', href: `mailto:${site.email}`, Mark: MailMark, external: false },
+  {
+    label: 'Curriculum Vitae',
+    href: `${import.meta.env.BASE_URL}${site.links.cv}`,
+    Mark: CVMark,
+    external: true,
+  },
 ];
 
 export function Hero() {
@@ -33,18 +39,16 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-2.5">
-            {heroLinks.map(({ label, href, Mark }) => (
+          <div className="mt-9 flex flex-wrap items-center gap-2">
+            {heroLinks.map(({ label, href, Mark, external }) => (
               <a
                 key={label}
                 href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="icon-btn"
-                aria-label={label}
-                title={label}
+                {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                className="btn"
               >
-                <Mark className="h-[18px] w-[18px]" />
+                <Mark className="h-[17px] w-[17px] shrink-0" />
+                {label}
               </a>
             ))}
           </div>

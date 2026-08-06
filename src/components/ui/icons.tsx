@@ -38,6 +38,25 @@ export function NotesMark({ className }: IconProps) {
   );
 }
 
+/** Email contact: a sealed envelope. */
+export function MailMark({ className }: IconProps) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={1.8}
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect x="2.5" y="5" width="19" height="14" rx="2.5" />
+      <path d="m3.5 7 7.34 5.4a2 2 0 0 0 2.32 0L20.5 7" />
+    </svg>
+  );
+}
+
 /** Curriculum vitae: a document with an identity line. */
 export function CVMark({ className }: IconProps) {
   return (
