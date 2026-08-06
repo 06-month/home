@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # A deployment Pages cancelled can only be retried from a fresh run, so allow
+  # redeploying main by hand instead of pushing an empty commit for it.
+  workflow_dispatch:
 
 permissions:
   contents: read
