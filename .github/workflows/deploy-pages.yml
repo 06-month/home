@@ -9,9 +9,11 @@ permissions:
   pages: write
   id-token: write
 
+# Pages keys each deployment by commit SHA, and a cancelled SHA can never deploy
+# again. Let a queued run wait instead of cancelling the one ahead of it.
 concurrency:
   group: 'pages'
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   build:
