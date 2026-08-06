@@ -41,7 +41,6 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
-    timeout-minutes: 40
     environment:
       name: github-pages
       url: ${{ steps.deploy.outputs.page_url }}
@@ -49,8 +48,3 @@ jobs:
       - name: Deploy
         id: deploy
         uses: actions/deploy-pages@v4
-        with:
-          # Pages has been leaving deployments in deployment_queued well past the
-          # action's 10-minute default, and hitting that default cancels the
-          # deployment outright. Wait it out instead: 30 minutes.
-          timeout: 1800000
