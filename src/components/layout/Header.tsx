@@ -30,14 +30,6 @@ export function Header() {
 
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a
-            href={`${import.meta.env.BASE_URL}${site.links.cv}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-solid px-4 py-1.5 text-[12px]"
-          >
-            CV
-          </a>
         </div>
       </div>
     </header>

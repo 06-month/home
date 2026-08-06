@@ -1,5 +1,14 @@
 import { site, noteArchive } from '@/data/content';
 import { GaussianField } from '@/components/ui/GaussianField';
+import { GitHubMark, LinkedInMark, NotesMark, CVMark } from '@/components/ui/icons';
+
+// Icon-only links; the accessible name lives in aria-label/title, not in visible text.
+const heroLinks = [
+  { label: 'GitHub', href: site.links.github, Mark: GitHubMark },
+  { label: 'Research Notes', href: site.links.blog, Mark: NotesMark },
+  { label: 'LinkedIn', href: site.links.linkedin, Mark: LinkedInMark },
+  { label: 'Curriculum Vitae', href: `${import.meta.env.BASE_URL}${site.links.cv}`, Mark: CVMark },
+];
 
 export function Hero() {
   return (
@@ -24,16 +33,20 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="mt-9 flex flex-wrap items-center gap-2">
-            <a href={site.links.github} target="_blank" rel="noopener noreferrer" className="btn-solid">
-              GitHub
-            </a>
-            <a href={site.links.blog} target="_blank" rel="noopener noreferrer" className="btn">
-              Research Notes
-            </a>
-            <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer" className="btn">
-              LinkedIn
-            </a>
+          <div className="mt-9 flex flex-wrap items-center gap-2.5">
+            {heroLinks.map(({ label, href, Mark }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="icon-btn"
+                aria-label={label}
+                title={label}
+              >
+                <Mark className="h-[18px] w-[18px]" />
+              </a>
+            ))}
           </div>
         </div>
 
