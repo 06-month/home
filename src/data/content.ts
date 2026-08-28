@@ -36,7 +36,7 @@ export const researchPhilosophy =
   'I am interested in understanding how representation choices and model assumptions affect 3D/4D reconstruction, dynamic scene modeling, and view synthesis. Rather than treating models as black boxes, I try to analyze what each component contributes to geometry, appearance, motion, and rendering quality.\n\nMy current goal is to build a solid research foundation through careful paper reading, reproducible implementation, and controlled experiments on feed-forward Gaussian reconstruction and motion modeling.';
 
 export const priorWorkFraming =
-  'My selected works reflect a progression from 2D visual understanding toward feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.';
+  'My selected works reflect a progression from 2D visual understanding toward feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling, alongside the tooling I build to support that research workflow.';
 
 export const education: EducationItem[] = [
   {
@@ -88,6 +88,48 @@ export const projects: Project[] = [
     description: 'Leading the AI pipeline of a mobile exercise coaching system based on on-device human pose estimation, exercise-specific pose keypoints, joint-angle features, and model-based feedback logic.',
     ongoing: true,
     type: 'Capstone Design Project',
+  },
+  {
+    id: 'exercise3d-pipeline',
+    title: 'Exercise3D Multi-View Dataset Pipeline',
+    period: 'Aug. 2026 – Present',
+    keywords: ['Multi-View Geometry', '3D Human Motion', 'Bundle Adjustment'],
+    description:
+      'Built an end-to-end pipeline turning synchronized triple-camera exercise video into camera poses, 3D joints, and parametric body fits, via audio/PTS-based temporal synchronization, fixed-camera bundle adjustment, and multi-view triangulation. Processed 26 sequences / 78 camera views / 65,595 frames, with 24 of 26 sequences completed end-to-end under per-frame quality validation.',
+    ongoing: true,
+    type: 'Independent Research Engineering',
+  },
+  {
+    id: 'paperflow',
+    title: 'PaperFlow — Zotero Reader Research Assistant',
+    period: 'Jun. 2026 – Present',
+    keywords: ['Research Tooling', 'Document Layout Analysis', 'LLM Application'],
+    description:
+      'Built a Zotero Reader plugin that keeps paper reading in one place: layout-aware Korean translation that preserves two-column reading order, reconstructed figure/table regions with translated captions, LaTeX equations rendered as MathML, and paper-grounded chat over the open PDF.',
+    href: 'https://github.com/06-month/paperflow',
+    label: 'GitHub',
+    ongoing: true,
+    type: 'Research Tooling',
+  },
+  {
+    id: 'orbit',
+    title: 'Orbit — AI Browser Agent for Personal Browsing Memory',
+    period: 'May 2026 – Present',
+    keywords: ['AI Agent', 'RAG', 'Semantic Retrieval'],
+    description:
+      'Building an AI browser agent that captures and organizes browsing activity into evolving sessions, enabling semantic retrieval, session restoration, and context-aware browser interactions.',
+    ongoing: true,
+    type: 'AI ROOKIE Project',
+  },
+  {
+    id: 'pitch-control',
+    title: 'Baseball Pitch Control Prediction',
+    period: 'Aug. 2026 – Present',
+    keywords: ['CatBoost', 'Temporal Modeling', 'Calibration'],
+    description:
+      'Developing probabilistic models for pitch-control prediction using historical game data and TrackMan sequences, with temporal validation, leakage-safe feature engineering, calibration, and sequence modeling.',
+    ongoing: true,
+    type: 'LG Aimers Data Intelligence Competition',
   },
   {
     id: 'satellite-building',
