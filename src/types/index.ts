@@ -8,7 +8,7 @@ export interface Project {
   label?: string;
   blogHref?: string;
   ongoing?: boolean;
-  /** Work from the earlier 2D-vision identity; rendered in a compressed list. */
+  /** Kept out of the card grid and rendered in the compressed "Other Work" list. */
   earlier?: boolean;
   type?: string;
 }

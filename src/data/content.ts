@@ -109,6 +109,7 @@ export const projects: Project[] = [
     href: 'https://github.com/06-month/paperflow',
     label: 'GitHub',
     ongoing: true,
+    earlier: true,
     type: 'Research Tooling',
   },
   {
@@ -119,11 +120,12 @@ export const projects: Project[] = [
     description:
       'Building an AI browser agent that captures and organizes browsing activity into evolving sessions, enabling semantic retrieval, session restoration, and context-aware browser interactions.',
     ongoing: true,
+    earlier: true,
     type: 'AI ROOKIE Project',
   },
   {
     id: 'pitch-control',
-    title: 'Baseball Pitch Control Prediction',
+    title: 'LG Aimers — Baseball Pitch Control Prediction',
     period: 'Aug. 2026 – Present',
     keywords: ['CatBoost', 'Temporal Modeling', 'Calibration'],
     description:

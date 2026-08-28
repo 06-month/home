@@ -21,7 +21,7 @@ export function Research() {
       {earlier.length > 0 && (
         <details className="group card mt-5 px-7 py-5">
           <summary className="flex cursor-pointer list-none items-center justify-between gap-4">
-            <span className="label">Earlier Work — 2D Visual Understanding</span>
+            <span className="label">Other Work</span>
             <span className="meta">
               {earlier.length}
               <span className="ml-2 inline-block transition-transform duration-150 group-open:rotate-90">
