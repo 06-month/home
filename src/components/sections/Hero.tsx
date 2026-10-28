@@ -62,8 +62,8 @@ export function Hero() {
       {/* Quick facts: only figures stated elsewhere on the page, so nothing here is a claim of its own. */}
       <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-[var(--radius-card)] border border-line bg-line sm:grid-cols-4">
         {[
-          { k: 'Affiliation', v: 'Hanbat National Univ.' },
-          { k: 'Focus', v: '3D/4D Reconstruction' },
+          { k: 'Education', v: 'Hanbat National Univ.' },
+          { k: 'Research Lab', v: 'VILAB · Yonsei Univ.' },
           { k: 'Publications', v: '1 · KICS 2026' },
           { k: 'Research Notes', v: String(noteArchive.total) },
         ].map(({ k, v }) => (

@@ -3,7 +3,7 @@ import type { ExperienceItem, Project, SkillGroup, EducationItem, PublicationIte
 // Single source of truth for how the research focus is stated. Used verbatim in the
 // hero, the footer, and index.html's meta tags — keep those three in sync when editing.
 export const researchStatement =
-  'Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.';
+  'Undergraduate researcher on feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, motion modeling, and efficient neural rendering.';
 
 export const site = {
   name: 'Jun Jeon',
@@ -16,6 +16,7 @@ export const site = {
     'Feed-Forward 3D/4D Reconstruction',
     'Dynamic Gaussian Representations',
     'Motion Modeling',
+    'Efficient Neural Rendering',
   ],
   links: {
     github: 'https://github.com/06-month',
@@ -27,9 +28,9 @@ export const site = {
 } as const;
 
 export const aboutParagraphs = [
-  'I am an undergraduate researcher interested in feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, and motion modeling.',
-  'Through research experience in 3D hand pose estimation and 3D hand reconstruction, I became interested in how visual observations can be used to infer and represent 3D structure. I am now extending this interest toward dynamic, scene-level neural representation.',
-  'Before moving toward 3D/4D reconstruction, I built a foundation in 2D visual understanding, image classification, and semantic segmentation. This background now informs my interest in geometry-aware and motion-aware visual perception.',
+  'I am a Computer Engineering undergraduate at Hanbat National University and an undergraduate researcher at the Visual Intelligence Lab (VILAB), Yonsei University, advised by Prof. Youngjung Uh since September 2026.',
+  'My research interests are feed-forward 3D/4D scene reconstruction, dynamic Gaussian representations, motion modeling, and efficient neural rendering. I am currently investigating online dynamic scene reconstruction from monocular RGB video through persistent 4D Gaussian correction.',
+  'Previously, I worked on 3D hand pose estimation and 3D hand reconstruction at UNIST Vision & Learning Lab (UVLL), advised by Prof. Seungryul Baek, and on computer vision, image classification, and semantic segmentation at Hanbat National University’s AiRLab, advised by Prof. Dong-Geol Choi.',
 ];
 
 export const researchPhilosophy =
@@ -73,12 +74,12 @@ export const publications: PublicationItem[] = [
 export const projects: Project[] = [
   {
     id: 'feed-forward-3d4d',
-    title: 'Feed-Forward 3D/4D Reconstruction Study',
-    period: 'Jun. 2026 – Present',
+    title: 'Online Dynamic Scene Reconstruction via Persistent 4D Gaussian Correction',
+    period: 'Sep. 2026 – Present',
     keywords: ['Feed-Forward Reconstruction', 'Dynamic Gaussians', 'Neural Rendering'],
-    description: 'Studying compact query-based and dynamic Gaussian reconstruction methods, including 3DGS, Deformable 3DGS, VGGT, C3G, and C4G.',
+    description: 'Investigating online feed-forward dynamic 4D Gaussian reconstruction from monocular RGB video by refining persistent query and Gaussian representations with sequential observations.',
     ongoing: true,
-    type: 'Independent Literature Study & Research Proposal',
+    type: 'Ongoing Research · Monocular Online 4D Gaussian Reconstruction',
   },
   {
     id: 'on-device-pose',
@@ -92,11 +93,11 @@ export const projects: Project[] = [
   {
     id: 'exercise3d-pipeline',
     title: 'Exercise3D Multi-View Dataset Pipeline',
-    period: 'Aug. 2026 – Present',
+    period: 'Aug. 2026 – Sep. 2026',
     keywords: ['Multi-View Geometry', '3D Human Motion', 'Bundle Adjustment'],
     description:
-      'Built an end-to-end pipeline turning synchronized triple-camera exercise video into camera poses, 3D joints, and parametric body fits, via audio/PTS-based temporal synchronization, fixed-camera bundle adjustment, and multi-view triangulation. Processed 26 sequences / 78 camera views / 65,595 frames, with 24 of 26 sequences completed end-to-end under per-frame quality validation.',
-    ongoing: true,
+      'Built an end-to-end pipeline converting synchronized triple-camera exercise video into camera poses, 3D joints, and parametric body fits, via audio/PTS-based temporal synchronization, fixed-camera bundle adjustment, and multi-view triangulation. Completed the dataset pipeline for 26 sequences / 78 videos / 65,595 frames with per-frame quality validation.',
+    ongoing: false,
     type: 'Independent Research Engineering',
   },
   {
@@ -259,6 +260,12 @@ export const skillGroups: SkillGroup[] = [
 ];
 
 export const experiences: ExperienceItem[] = [
+  {
+    period: 'Sep. 2026 – Present',
+    title: 'Undergraduate Researcher',
+    org: 'Visual Intelligence Lab (VILAB), Yonsei University',
+    description: 'Advised by Prof. Youngjung Uh. Undergraduate research on feed-forward 3D/4D scene reconstruction.',
+  },
   {
     period: 'Mar. 2026 – Jun. 2026',
     title: 'Undergraduate Researcher',
